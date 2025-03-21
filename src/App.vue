@@ -2,7 +2,5 @@
 </script>
 
 <template>
-  <main>
-    <router-view />
-  </main>
+  <router-view class="min-h-screen"/>
 </template>

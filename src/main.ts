@@ -10,13 +10,10 @@ app.use(createPlatform())
 app.mount('#app')
 app.runWithContext(() => {
   const router = useRouter()
-  router.addRoute('main', {
+  router.addRoute('Home', {
     name: 'empty',
     path: '',
-    component: () => import('@/views/NotFoundView.vue'),
-    meta: {
-      requiresAuth: true,
-    }
+    component: () => import('@/views/NotFoundView.vue')
   })
   router.beforeEach((to, from) => {
     console.debug('playground beforeEach', from, to)

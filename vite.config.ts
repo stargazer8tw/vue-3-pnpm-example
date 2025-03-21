@@ -9,6 +9,7 @@ import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 // https://vite.dev/config/
 export default defineConfig({
+  base: '',
   plugins: [
     vue(),
     vueDevTools(),
@@ -27,4 +28,15 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    sourcemap: true,
+    target: 'esnext',
+    minify: false,
+    rollupOptions: {
+      external: [
+        'vue',
+        /^node:.*/
+      ]
+    }
+  }
 })
