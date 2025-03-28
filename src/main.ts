@@ -11,8 +11,13 @@ app.mount('#app')
 app.runWithContext(() => {
   const router = useRouter()
   router.addRoute('Home', {
-    name: 'empty',
+    name: 'example',
     path: '',
+    component: () => import('@/views/ExampleView.vue')
+  })
+  router.addRoute('Home', {
+    name: 'notfound',
+    path: 'notfound',
     component: () => import('@/views/NotFoundView.vue')
   })
   router.beforeEach((to, from) => {
