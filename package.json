@@ -16,27 +16,51 @@
     "pnpm": ">=10.0.0"
   },
   "dependencies": {
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "peerDependencies": {
+    "@unovis/ts": "catalog:shadcn-vue",
+    "@unovis/vue": "catalog:shadcn-vue",
+    "@vee-validate/zod": "catalog:shadcn-vue",
+    "@vueuse/core": "catalog:shadcn-vue",
+    "class-variance-authority": "catalog:shadcn-vue",
+    "clsx": "catalog:shadcn-vue",
+    "embla-carousel-vue": "catalog:shadcn-vue",
+    "reka-ui": "catalog:shadcn-vue",
+    "tailwind-merge": "catalog:shadcn-vue",
+    "tailwindcss-animate": "catalog:shadcn-vue",
+    "vaul-vue": "catalog:shadcn-vue",
+    "vee-validate": "catalog:shadcn-vue",
+    "vue-sonner": "catalog:shadcn-vue",
+    "zod": "catalog:shadcn-vue"
+  },
+  "optionalDependencies": {
+    "@formkit/auto-animate": "catalog:shadcn-vue-peer",
+    "@internationalized/date": "catalog:shadcn-vue-peer",
+    "@tanstack/vue-table": "catalog:shadcn-vue-peer"
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.1",
-    "@types/node": "^22.13.14",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/tsconfig": "^0.7.0",
-    "autoprefixer": "^10.4.21",
-    "npm-run-all2": "^7.0.2",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
-    "typescript": "~5.8.0",
-    "unplugin-vue-components": "^28.4.1",
-    "vite": "^6.2.3",
-    "vite-plugin-vue-devtools": "^7.7.2",
-    "vue-tsc": "^2.2.8"
+    "@tsconfig/node22": "catalog:vite6",
+    "@types/node": "catalog:vite6",
+    "@vitejs/plugin-vue": "catalog:vite6",
+    "@vue/tsconfig": "catalog:vite6",
+    "autoprefixer": "catalog:vite6",
+    "lucide-vue-next": "catalog:shadcn-vue-dev",
+    "npm-run-all2": "catalog:vite6",
+    "postcss": "catalog:vite6",
+    "tailwindcss": "catalog:vite6",
+    "typescript": "catalog:vite6",
+    "unplugin-vue-components": "catalog:vite6",
+    "vite": "catalog:vite6",
+    "vite-plugin-vue-devtools": "catalog:vite6",
+    "vue-tsc": "catalog:vite6"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "maplibre-gl",
+      "vue-demi"
     ]
   }
 }
