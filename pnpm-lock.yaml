@@ -31,9 +31,6 @@ catalogs:
     clsx:
       specifier: ^2.1.1
       version: 2.1.1
-    embla-carousel-vue:
-      specifier: ^8.5.2
-      version: 8.5.2
     reka-ui:
       specifier: ^2.1.1
       version: 2.1.1
@@ -132,9 +129,6 @@ importers:
       clsx:
         specifier: catalog:shadcn-vue
         version: 2.1.1
-      embla-carousel-vue:
-        specifier: catalog:shadcn-vue
-        version: 8.5.2(vue@3.5.13(typescript@5.8.2))
       reka-ui:
         specifier: catalog:shadcn-vue
         version: 2.1.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
@@ -1451,19 +1445,6 @@ packages:
 
   elkjs@0.8.2:
     resolution: {integrity: sha512-L6uRgvZTH+4OF5NE/MBbzQx/WYpru1xCBE9respNj6qznEewGUIfhzmm7horWWxbNO2M0WckQypGctR8lH79xQ==}
-
-  embla-carousel-reactive-utils@8.5.2:
-    resolution: {integrity: sha512-QC8/hYSK/pEmqEdU1IO5O+XNc/Ptmmq7uCB44vKplgLKhB/l0+yvYx0+Cv0sF6Ena8Srld5vUErZkT+yTahtDg==}
-    peerDependencies:
-      embla-carousel: 8.5.2
-
-  embla-carousel-vue@8.5.2:
-    resolution: {integrity: sha512-jPZKpst5auGJQ/GRs+UPc7KQGYd/zkwU+bA3m/SDCd4dsTpNScSmfBDWeB/SSUcc6G3z9GV+bOfyAJw1gZLUMA==}
-    peerDependencies:
-      vue: ^3.2.37
-
-  embla-carousel@8.5.2:
-    resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3741,18 +3722,6 @@ snapshots:
   electron-to-chromium@1.5.123: {}
 
   elkjs@0.8.2: {}
-
-  embla-carousel-reactive-utils@8.5.2(embla-carousel@8.5.2):
-    dependencies:
-      embla-carousel: 8.5.2
-
-  embla-carousel-vue@8.5.2(vue@3.5.13(typescript@5.8.2)):
-    dependencies:
-      embla-carousel: 8.5.2
-      embla-carousel-reactive-utils: 8.5.2(embla-carousel@8.5.2)
-      vue: 3.5.13(typescript@5.8.2)
-
-  embla-carousel@8.5.2: {}
 
   emoji-regex@8.0.0: {}
 

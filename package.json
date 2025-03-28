@@ -31,7 +31,6 @@
     "tailwindcss-animate": "catalog:shadcn-vue",
     "vaul-vue": "catalog:shadcn-vue",
     "vee-validate": "catalog:shadcn-vue",
-    "vue-sonner": "catalog:shadcn-vue",
     "zod": "catalog:shadcn-vue"
   },
   "optionalDependencies": {
