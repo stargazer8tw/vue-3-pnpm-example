@@ -26,7 +26,6 @@
     "@vueuse/core": "catalog:shadcn-vue",
     "class-variance-authority": "catalog:shadcn-vue",
     "clsx": "catalog:shadcn-vue",
-    "embla-carousel-vue": "catalog:shadcn-vue",
     "reka-ui": "catalog:shadcn-vue",
     "tailwind-merge": "catalog:shadcn-vue",
     "tailwindcss-animate": "catalog:shadcn-vue",
