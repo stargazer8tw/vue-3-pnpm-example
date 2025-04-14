@@ -51,8 +51,8 @@ catalogs:
       version: 3.24.2
   shadcn-vue-dev:
     lucide-vue-next:
-      specifier: ^0.484.0
-      version: 0.484.0
+      specifier: ^0.488.0
+      version: 0.488.0
   shadcn-vue-peer:
     '@formkit/auto-animate':
       specifier: ^0.8.2
@@ -95,7 +95,7 @@ catalogs:
       specifier: ^28.4.1
       version: 28.4.1
     vite:
-      specifier: ^6.2.5
+      specifier: ^6.2.3
       version: 6.2.5
     vite-plugin-vue-devtools:
       specifier: ^7.7.2
@@ -168,7 +168,7 @@ importers:
         version: 10.4.21(postcss@8.5.3)
       lucide-vue-next:
         specifier: catalog:shadcn-vue-dev
-        version: 0.484.0(vue@3.5.13(typescript@5.8.2))
+        version: 0.488.0(vue@3.5.13(typescript@5.8.2))
       npm-run-all2:
         specifier: catalog:vite6
         version: 7.0.2
@@ -1721,8 +1721,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.484.0:
-    resolution: {integrity: sha512-QvMgOpsXtZZ0gSNS/cs8NLcQkDsowQI1zbMLmDtIbxN8l/Qd9J7jImC0LpmdjGegLPDTRd1OXJOICzXtAKEQ8Q==}
+  lucide-vue-next@0.488.0:
+    resolution: {integrity: sha512-Za02FzR1r+XN2oxOQerH7HvZwLJz27qPfzbauYzphtewy1g59Bm2DraVS5Sb9iHcIe3Pqf8cTVufvpwqAKlsew==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -3971,7 +3971,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.484.0(vue@3.5.13(typescript@5.8.2)):
+  lucide-vue-next@0.488.0(vue@3.5.13(typescript@5.8.2)):
     dependencies:
       vue: 3.5.13(typescript@5.8.2)
 
