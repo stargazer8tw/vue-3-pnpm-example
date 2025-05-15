@@ -238,8 +238,8 @@ watchEffect((cleanupFn) => {
           description: 'Friday, February 10, 2023 at 5:57 PM',
           dismissible: false,
           duration: 1000,
-          onDismiss: (toast: ToastT) => console.log('dismiss'),
-          onAutoClose: (toast: ToastT) => console.log('autoclose'),
+          onDismiss: (toast) => console.log('dismiss', toast),
+          onAutoClose: (toast) => console.log('autoclose', toast),
           action: {
             label: 'Undo',
             onClick: () => console.log('Undo'),
