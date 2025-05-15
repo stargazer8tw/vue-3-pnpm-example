@@ -49,7 +49,7 @@ import {
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
-import { ToastAction, useToast } from '@/components/ui/toast'
+import { toast } from 'vue-sonner'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import {
   Tooltip,
@@ -66,7 +66,6 @@ import {
   UnderlineIcon
 } from 'lucide-vue-next'
 
-const { toast } = useToast()
 // accordion
 const defaultValue = 'item-1'
 
@@ -144,7 +143,7 @@ watchEffect((cleanupFn) => {
     </AspectRatio> -->
     Avatar
     <Avatar>
-      <AvatarImage src="https://github.com/radix-vue.png" alt="@radix-vue" />
+      <AvatarImage src="favicon.ico" alt="favicon" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
     Badge
@@ -233,31 +232,31 @@ watchEffect((cleanupFn) => {
     <h1>Skeleton</h1>
     <Skeleton class="w-[100px] h-5 rounded-full" />
     <h1>Toast</h1>
-    <Button variant="outline" @click="
+    <Button variant="outline" class="bg-destructive-background" @click="
       () => {
-        toast({
-          title: 'Scheduled: Catch up',
-          description: 'Friday, February 10, 2023 at 5:57 PM'
+        toast.warning('Event has been created', {
+          description: 'Friday, February 10, 2023 at 5:57 PM',
+          dismissible: false,
+          duration: 1000,
+          onDismiss: (toast: ToastT) => console.log('dismiss'),
+          onAutoClose: (toast: ToastT) => console.log('autoclose'),
+          action: {
+            label: 'Undo',
+            onClick: () => console.log('Undo'),
+          }
         })
       }
     ">
       Add to calendar
     </Button>
-    <Button variant="outline" @click="
+    <Button variant="destructive" @click="
       () => {
-        toast({
-          title: 'Uh oh! Something went wrong.',
-          description: 'There was a problem with your request.',
-          variant: 'destructive',
-          action: h(
-            ToastAction,
-            {
-              altText: 'Try again'
-            },
-            {
-              default: () => 'Try again'
-            }
-          )
+        toast('Event has been created', {
+          description: 'Sunday, December 03, 2023 at 9:00 AM',
+          action: {
+            label: 'Undo',
+            onClick: () => console.log('Undo'),
+          },
         })
       }
     ">

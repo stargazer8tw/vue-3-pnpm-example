@@ -4,11 +4,11 @@ import { type AlertDialogEmits, type AlertDialogProps, AlertDialogRoot, useForwa
 const props = defineProps<AlertDialogProps>()
 const emits = defineEmits<AlertDialogEmits>()
 
-const forwarded: object = useForwardPropsEmits(props, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <AlertDialogRoot v-bind="forwarded">
+  <AlertDialogRoot data-slot="alert-dialog" v-bind="forwarded">
     <slot />
   </AlertDialogRoot>
 </template>

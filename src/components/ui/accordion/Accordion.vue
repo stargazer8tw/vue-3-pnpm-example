@@ -9,11 +9,11 @@ import {
 const props = defineProps<AccordionRootProps>()
 const emits = defineEmits<AccordionRootEmits>()
 
-const forwarded: object = useForwardPropsEmits(props, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <AccordionRoot v-bind="forwarded">
+  <AccordionRoot data-slot="accordion" v-bind="forwarded">
     <slot />
   </AccordionRoot>
 </template>

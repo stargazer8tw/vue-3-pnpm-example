@@ -4,11 +4,14 @@ import { DropdownMenuRoot, type DropdownMenuRootEmits, type DropdownMenuRootProp
 const props = defineProps<DropdownMenuRootProps>()
 const emits = defineEmits<DropdownMenuRootEmits>()
 
-const forwarded: object = useForwardPropsEmits(props, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <DropdownMenuRoot v-bind="forwarded">
+  <DropdownMenuRoot
+    data-slot="dropdown-menu"
+    v-bind="forwarded"
+  >
     <slot />
   </DropdownMenuRoot>
 </template>

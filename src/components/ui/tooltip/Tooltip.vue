@@ -4,11 +4,14 @@ import { TooltipRoot, type TooltipRootEmits, type TooltipRootProps, useForwardPr
 const props = defineProps<TooltipRootProps>()
 const emits = defineEmits<TooltipRootEmits>()
 
-const forwarded: object = useForwardPropsEmits(props, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <TooltipRoot v-bind="forwarded">
+  <TooltipRoot
+    data-slot="tooltip"
+    v-bind="forwarded"
+  >
     <slot />
   </TooltipRoot>
 </template>

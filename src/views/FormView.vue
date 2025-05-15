@@ -17,7 +17,7 @@ import {
   NumberFieldIncrement,
   NumberFieldInput
 } from '@/components/ui/number-field'
-import { PinInput, PinInputGroup, PinInputInput } from '@/components/ui/pin-input'
+import { PinInput, PinInputGroup } from '@/components/ui/pin-input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
   Command,
@@ -38,7 +38,7 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
-import { toast } from '@/components/ui/toast'
+import { toast } from 'vue-sonner'
 import { vAutoAnimate } from '@formkit/auto-animate/vue'
 import {
   CalendarDate,
@@ -315,7 +315,7 @@ const dateValue = computed({
             "
           >
             <PinInputGroup>
-              <PinInputInput v-for="(id, index) in 6" :key="id" :index="index" />
+              <PinInputSlot v-for="(id, index) in 6" :key="id" :index="index" />
             </PinInputGroup>
           </PinInput>
         </FormControl>

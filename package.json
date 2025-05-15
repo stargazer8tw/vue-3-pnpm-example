@@ -28,9 +28,10 @@
     "clsx": "catalog:shadcn-vue",
     "reka-ui": "catalog:shadcn-vue",
     "tailwind-merge": "catalog:shadcn-vue",
-    "tailwindcss-animate": "catalog:shadcn-vue",
+    "tw-animate-css": "catalog:shadcn-vue-peer",
     "vaul-vue": "catalog:shadcn-vue",
     "vee-validate": "catalog:shadcn-vue",
+    "vue-sonner": "catalog:shadcn-vue",
     "zod": "catalog:shadcn-vue"
   },
   "optionalDependencies": {
@@ -39,6 +40,8 @@
     "@tanstack/vue-table": "catalog:shadcn-vue-peer"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "catalog:vite6",
+    "@tailwindcss/vite": "catalog:vite6",
     "@tsconfig/node22": "catalog:vite6",
     "@types/node": "catalog:vite6",
     "@vitejs/plugin-vue": "catalog:vite6",
@@ -56,6 +59,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
       "esbuild",
       "maplibre-gl",
       "vue-demi"
