@@ -31,3 +31,17 @@ pnpm dev
 ```sh
 pnpm build
 ```
+
+## shadcn-vue
+
+2.1.0
+
+- rename `PinInputInput` to `PinInputSlot`
+- rename `PaginationPrev` to `PaginationPrevious`
+- rename `PaginationList` to `PaginationContent`
+- removed `toast`, replace with `sonner`
+
+[tailwindcss v4](https://v4.shadcn-vue.com/)
+
+### TODO
+

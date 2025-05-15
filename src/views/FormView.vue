@@ -38,7 +38,7 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
-import { toast } from '@/components/ui/toast'
+import { toast } from 'vue-sonner'
 import { vAutoAnimate } from '@formkit/auto-animate/vue'
 import {
   CalendarDate,
@@ -315,6 +315,7 @@ const dateValue = computed({
             "
           >
             <PinInputGroup>
+              <PinInputSlot v-for="(id, index) in 6" :key="id" :index="index" />
             </PinInputGroup>
           </PinInput>
         </FormControl>

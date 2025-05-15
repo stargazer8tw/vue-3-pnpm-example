@@ -37,6 +37,7 @@ import {
 } from '@/components/ui/table'
 import {
   Pagination,
+  PaginationContent,
   PaginationEllipsis,
   PaginationFirst,
   PaginationItem,
@@ -259,7 +260,7 @@ function randomize() {
         {{ table.getFilteredRowModel().rows.length }} row(s) selected.
       </div>
       <Pagination v-slot="{ page }" :items-per-page="10" :total="100" :sibling-count="1" show-edges :default-page="2">
-        <PaginationList v-slot="{ items }" class="flex items-center gap-1">
+        <PaginationContent v-slot="{ items }" class="flex items-center gap-1">
           <PaginationFirst />
           <PaginationPrevious />
 
@@ -279,7 +280,7 @@ function randomize() {
 
           <PaginationNext />
           <PaginationLast />
-        </PaginationList>
+        </PaginationContent>
       </Pagination>
       <div class="space-x-2">
         <Button
