@@ -17,7 +17,7 @@ import {
   NumberFieldIncrement,
   NumberFieldInput
 } from '@/components/ui/number-field'
-import { PinInput, PinInputGroup, PinInputInput } from '@/components/ui/pin-input'
+import { PinInput, PinInputGroup } from '@/components/ui/pin-input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
   Command,
@@ -315,7 +315,6 @@ const dateValue = computed({
             "
           >
             <PinInputGroup>
-              <PinInputInput v-for="(id, index) in 6" :key="id" :index="index" />
             </PinInputGroup>
           </PinInput>
         </FormControl>

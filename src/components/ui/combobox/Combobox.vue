@@ -4,11 +4,14 @@ import { ComboboxRoot, type ComboboxRootEmits, type ComboboxRootProps, useForwar
 const props = defineProps<ComboboxRootProps>()
 const emits = defineEmits<ComboboxRootEmits>()
 
-const forwarded: object = useForwardPropsEmits(props, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <ComboboxRoot v-bind="forwarded">
+  <ComboboxRoot
+    data-slot="combobox"
+    v-bind="forwarded"
+  >
     <slot />
   </ComboboxRoot>
 </template>

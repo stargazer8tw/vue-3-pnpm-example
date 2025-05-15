@@ -9,11 +9,14 @@ import {
 const props = defineProps<DropdownMenuRadioGroupProps>()
 const emits = defineEmits<DropdownMenuRadioGroupEmits>()
 
-const forwarded: object = useForwardPropsEmits(props, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <DropdownMenuRadioGroup v-bind="forwarded">
+  <DropdownMenuRadioGroup
+    data-slot="dropdown-menu-radio-group"
+    v-bind="forwarded"
+  >
     <slot />
   </DropdownMenuRadioGroup>
 </template>
