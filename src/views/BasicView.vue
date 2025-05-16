@@ -237,7 +237,9 @@ watchEffect((cleanupFn) => {
         toast.warning('Event has been created', {
           description: 'Friday, February 10, 2023 at 5:57 PM',
           dismissible: false,
-          duration: 1000,
+          richColors: true,
+          duration: 3000,
+          position: 'top-center',
           onDismiss: (toast) => console.log('dismiss', toast),
           onAutoClose: (toast) => console.log('autoclose', toast),
           action: {
