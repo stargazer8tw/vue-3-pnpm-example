@@ -10,7 +10,7 @@ catalogs:
       specifier: ^3.5.13
       version: 3.5.13
     vue-router:
-      specifier: ^4.5.1
+      specifier: ^4.5.0
       version: 4.5.1
   shadcn-vue:
     '@unovis/ts':
@@ -51,8 +51,8 @@ catalogs:
       version: 3.24.4
   shadcn-vue-dev:
     lucide-vue-next:
-      specifier: ^0.511.0
-      version: 0.511.0
+      specifier: ^0.510.0
+      version: 0.510.0
   shadcn-vue-peer:
     '@formkit/auto-animate':
       specifier: ^0.8.2
@@ -95,8 +95,8 @@ catalogs:
       specifier: ^8.5.3
       version: 8.5.3
     tailwindcss:
-      specifier: ^4.1.6
-      version: 4.1.6
+      specifier: ^4.1.8
+      version: 4.1.8
     typescript:
       specifier: ~5.8.3
       version: 5.8.3
@@ -186,7 +186,7 @@ importers:
         version: 10.4.21(postcss@8.5.3)
       lucide-vue-next:
         specifier: catalog:shadcn-vue-dev
-        version: 0.511.0(vue@3.5.13(typescript@5.8.3))
+        version: 0.510.0(vue@3.5.13(typescript@5.8.3))
       npm-run-all2:
         specifier: catalog:vite6
         version: 7.0.2
@@ -195,7 +195,7 @@ importers:
         version: 8.5.3
       tailwindcss:
         specifier: catalog:vite6
-        version: 4.1.6
+        version: 4.1.8
       typescript:
         specifier: catalog:vite6
         version: 5.8.3
@@ -1827,8 +1827,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.511.0:
-    resolution: {integrity: sha512-VSv0F3pHniGN7JMMzDcLFNMQbl8381+shNnHwV8hi+El7xl2ZL8qdNuzPoiBViKk8mTKK5K3ZDfmE/wEcTZVIQ==}
+  lucide-vue-next@0.510.0:
+    resolution: {integrity: sha512-C+duOTUoUpBFjSY1/ER2jwwS8kQJgTW/7vk7WWdnXhq7IWUlvfJtYal9cVsGCVf6wvS9m0t3Hg1ktaDjm8y1oQ==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -2121,6 +2121,9 @@ packages:
 
   tailwindcss@4.1.6:
     resolution: {integrity: sha512-j0cGLTreM6u4OWzBeLBpycK0WIh8w7kSwcUsQZoGLHZ7xDTdM69lN64AgoIEEwFi0tnhs4wSykUa5YWxAzgFYg==}
+
+  tailwindcss@4.1.8:
+    resolution: {integrity: sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -4029,7 +4032,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.511.0(vue@3.5.13(typescript@5.8.3)):
+  lucide-vue-next@0.510.0(vue@3.5.13(typescript@5.8.3)):
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
 
@@ -4327,6 +4330,8 @@ snapshots:
   tailwind-merge@3.3.0: {}
 
   tailwindcss@4.1.6: {}
+
+  tailwindcss@4.1.8: {}
 
   tapable@2.2.1: {}
 
