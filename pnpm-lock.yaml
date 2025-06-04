@@ -10,7 +10,7 @@ catalogs:
       specifier: ^3.5.13
       version: 3.5.13
     vue-router:
-      specifier: ^4.5.1
+      specifier: ^4.5.0
       version: 4.5.1
   shadcn-vue:
     '@unovis/ts':
@@ -51,8 +51,8 @@ catalogs:
       version: 3.24.4
   shadcn-vue-dev:
     lucide-vue-next:
-      specifier: ^0.511.0
-      version: 0.511.0
+      specifier: ^0.510.0
+      version: 0.510.0
   shadcn-vue-peer:
     '@formkit/auto-animate':
       specifier: ^0.8.2
@@ -89,8 +89,8 @@ catalogs:
       specifier: ^10.4.21
       version: 10.4.21
     npm-run-all2:
-      specifier: ^7.0.2
-      version: 7.0.2
+      specifier: ^8.0.4
+      version: 8.0.4
     postcss:
       specifier: ^8.5.3
       version: 8.5.3
@@ -186,10 +186,10 @@ importers:
         version: 10.4.21(postcss@8.5.3)
       lucide-vue-next:
         specifier: catalog:shadcn-vue-dev
-        version: 0.511.0(vue@3.5.13(typescript@5.8.3))
+        version: 0.510.0(vue@3.5.13(typescript@5.8.3))
       npm-run-all2:
         specifier: catalog:vite6
-        version: 7.0.2
+        version: 8.0.4
       postcss:
         specifier: catalog:vite6
         version: 8.5.3
@@ -1827,8 +1827,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.511.0:
-    resolution: {integrity: sha512-VSv0F3pHniGN7JMMzDcLFNMQbl8381+shNnHwV8hi+El7xl2ZL8qdNuzPoiBViKk8mTKK5K3ZDfmE/wEcTZVIQ==}
+  lucide-vue-next@0.510.0:
+    resolution: {integrity: sha512-C+duOTUoUpBFjSY1/ER2jwwS8kQJgTW/7vk7WWdnXhq7IWUlvfJtYal9cVsGCVf6wvS9m0t3Hg1ktaDjm8y1oQ==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -1906,9 +1906,9 @@ packages:
     resolution: {integrity: sha512-TZKxPvItzai9kN9H/TkmCtx/ZN/hvr3vUycjlfmH0ootY9yFBzNOpiXAdIn1Iteqsvk4lQn6B5PTrt+n6h8k/w==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  npm-run-all2@7.0.2:
-    resolution: {integrity: sha512-7tXR+r9hzRNOPNTvXegM+QzCuMjzUIIq66VDunL6j60O4RrExx32XUhlrS7UK4VcdGw5/Wxzb3kfNcFix9JKDA==}
-    engines: {node: ^18.17.0 || >=20.5.0, npm: '>= 9'}
+  npm-run-all2@8.0.4:
+    resolution: {integrity: sha512-wdbB5My48XKp2ZfJUlhnLVihzeuA1hgBnqB2J9ahV77wLS+/YAJAlN8I+X3DIFIPZ3m5L7nplmlbhNiFDmXRDA==}
+    engines: {node: ^20.5.0 || >=22.0.0, npm: '>= 10'}
     hasBin: true
 
   npm-run-path@6.0.0:
@@ -4029,7 +4029,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.511.0(vue@3.5.13(typescript@5.8.3)):
+  lucide-vue-next@0.510.0(vue@3.5.13(typescript@5.8.3)):
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
 
@@ -4109,12 +4109,12 @@ snapshots:
 
   npm-normalize-package-bin@4.0.0: {}
 
-  npm-run-all2@7.0.2:
+  npm-run-all2@8.0.4:
     dependencies:
       ansi-styles: 6.2.1
       cross-spawn: 7.0.6
       memorystream: 0.3.1
-      minimatch: 9.0.5
+      picomatch: 4.0.2
       pidtree: 0.6.0
       read-package-json-fast: 4.0.0
       shell-quote: 1.8.2
