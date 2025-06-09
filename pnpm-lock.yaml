@@ -58,8 +58,8 @@ catalogs:
       specifier: ^0.8.2
       version: 0.8.2
     '@internationalized/date':
-      specifier: ^3.8.0
-      version: 3.8.0
+      specifier: ^3.8.2
+      version: 3.8.2
     '@tanstack/vue-table':
       specifier: ^8.21.3
       version: 8.21.3
@@ -217,7 +217,7 @@ importers:
         version: 0.8.2
       '@internationalized/date':
         specifier: catalog:shadcn-vue-peer
-        version: 3.8.0
+        version: 3.8.2
       '@tanstack/vue-table':
         specifier: catalog:shadcn-vue-peer
         version: 8.21.3(vue@3.5.13(typescript@5.8.3))
@@ -570,8 +570,8 @@ packages:
   '@formkit/auto-animate@0.8.2':
     resolution: {integrity: sha512-SwPWfeRa5veb1hOIBMdzI+73te5puUBHmqqaF1Bu7FjvxlYSz/kJcZKSa9Cg60zL0uRNeJL2SbRxV6Jp6Q1nFQ==}
 
-  '@internationalized/date@3.8.0':
-    resolution: {integrity: sha512-J51AJ0fEL68hE4CwGPa6E0PO6JDaVLd8aln48xFCSy7CZkZc96dGEGmLs2OEEbBxcsVZtfrqkXJwI2/MSG8yKw==}
+  '@internationalized/date@3.8.2':
+    resolution: {integrity: sha512-/wENk7CbvLbkUvX1tu0mwq49CVkkWpkXubGel6birjRPyo6uQ4nQpnq5xZu823zRCwwn82zgHrvgF1vZyvmVgA==}
 
   '@internationalized/number@3.6.0':
     resolution: {integrity: sha512-PtrRcJVy7nw++wn4W2OuePQQfTqDzfusSuY1QTtui4wa7r+rGVtR75pO8CyKvHvzyQYi3Q1uO5sY0AsB4e65Bw==}
@@ -2883,7 +2883,7 @@ snapshots:
   '@formkit/auto-animate@0.8.2':
     optional: true
 
-  '@internationalized/date@3.8.0':
+  '@internationalized/date@3.8.2':
     dependencies:
       '@swc/helpers': 0.5.15
 
@@ -4484,7 +4484,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.6.13
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.8.3))
-      '@internationalized/date': 3.8.0
+      '@internationalized/date': 3.8.2
       '@internationalized/number': 3.6.0
       '@tanstack/vue-virtual': 3.13.5(vue@3.5.13(typescript@5.8.3))
       '@vueuse/core': 12.8.2(typescript@5.8.3)
