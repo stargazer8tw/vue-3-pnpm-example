@@ -21,7 +21,7 @@ catalogs:
     class-variance-authority: ^0.7.1
     clsx: ^2.1.1
     embla-carousel-vue: ^8.5.2
-    reka-ui: ^2.2.1
+    reka-ui: ^2.3.2
     tailwind-merge: ^3.3.0
     vaul-vue: ^0.4.1
     vee-validate: ^4.15.0
