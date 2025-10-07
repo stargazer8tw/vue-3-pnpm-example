@@ -1,32 +1,28 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
+import type { MenubarRootEmits, MenubarRootProps } from "reka-ui"
+import type { HTMLAttributes } from "vue"
+import { reactiveOmit } from "@vueuse/core"
 import {
   MenubarRoot,
-  type MenubarRootEmits,
-  type MenubarRootProps,
-  useForwardPropsEmits,
-} from 'reka-ui'
-import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<MenubarRootProps & { class?: HTMLAttributes['class'] }>()
+  useForwardPropsEmits,
+} from "reka-ui"
+import { cn } from "@/lib/utils"
+
+const props = defineProps<MenubarRootProps & { class?: HTMLAttributes["class"] }>()
 const emits = defineEmits<MenubarRootEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, "class")
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
   <MenubarRoot
-    data-slot="menubar"
     v-bind="forwarded"
     :class="
       cn(
-        'bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs',
+        'flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm',
         props.class,
       )
     "
