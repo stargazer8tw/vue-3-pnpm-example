@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@/lib/utils'
-import { useFormField } from './useFormField'
+import type { HTMLAttributes } from "vue"
+import { cn } from "@/lib/utils"
+import { useFormField } from "./useFormField"
 
 const props = defineProps<{
-  class?: HTMLAttributes['class']
+  class?: HTMLAttributes["class"]
 }>()
 
 const { formDescriptionId } = useFormField()
@@ -13,8 +13,7 @@ const { formDescriptionId } = useFormField()
 <template>
   <p
     :id="formDescriptionId"
-    data-slot="form-description"
-    :class="cn('text-muted-foreground text-sm', props.class)"
+    :class="cn('text-sm text-muted-foreground', props.class)"
   >
     <slot />
   </p>

@@ -8,16 +8,17 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "type-check": "vue-tsc --build",
+    "update-browserslist": "pnpm dlx update-browserslist-db@latest"
   },
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.18.1",
   "engines": {
     "node": ">=22.0.0",
     "pnpm": ">=10.0.0"
   },
   "dependencies": {
-    "vue": "catalog:",
-    "vue-router": "catalog:"
+    "vue": "catalog:vue",
+    "vue-router": "catalog:vue"
   },
   "peerDependencies": {
     "@unovis/ts": "catalog:shadcn-vue",
@@ -26,9 +27,10 @@
     "@vueuse/core": "catalog:shadcn-vue",
     "class-variance-authority": "catalog:shadcn-vue",
     "clsx": "catalog:shadcn-vue",
+    "embla-carousel-vue": "catalog:shadcn-vue",
     "reka-ui": "catalog:shadcn-vue",
-    "tailwind-merge": "catalog:shadcn-vue",
-    "tw-animate-css": "catalog:shadcn-vue-peer",
+    "tailwind-merge": "catalog:css",
+    "tw-animate-css": "catalog:css",
     "vaul-vue": "catalog:shadcn-vue",
     "vee-validate": "catalog:shadcn-vue",
     "vue-sonner": "catalog:shadcn-vue",
@@ -40,29 +42,27 @@
     "@tanstack/vue-table": "catalog:shadcn-vue-peer"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "catalog:vite6",
-    "@tailwindcss/vite": "catalog:vite6",
-    "@tsconfig/node22": "catalog:vite6",
-    "@types/node": "catalog:vite6",
-    "@vitejs/plugin-vue": "catalog:vite6",
-    "@vue/tsconfig": "catalog:vite6",
-    "autoprefixer": "catalog:vite6",
-    "lucide-vue-next": "catalog:shadcn-vue-dev",
-    "npm-run-all2": "catalog:vite6",
-    "postcss": "catalog:vite6",
-    "tailwindcss": "catalog:vite6",
-    "typescript": "catalog:vite6",
-    "unplugin-vue-components": "catalog:vite6",
-    "vite": "catalog:vite6",
-    "vite-plugin-vue-devtools": "catalog:vite6",
-    "vue-tsc": "catalog:vite6"
+    "@tailwindcss/postcss": "catalog:css",
+    "@tailwindcss/vite": "catalog:css",
+    "@tsconfig/node22": "catalog:vite",
+    "@types/node": "catalog:vite",
+    "@vitejs/plugin-vue": "catalog:vite",
+    "@vue/tsconfig": "catalog:vite",
+    "autoprefixer": "catalog:css",
+    "lucide-vue-next": "catalog:icons",
+    "npm-run-all2": "catalog:vite",
+    "postcss": "catalog:css",
+    "tailwindcss": "catalog:css",
+    "typescript": "catalog:vite",
+    "unplugin-vue-components": "catalog:vite",
+    "vite": "catalog:vite",
+    "vite-plugin-vue-devtools": "catalog:vite",
+    "vue-tsc": "catalog:vite"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
-      "esbuild",
-      "maplibre-gl",
-      "vue-demi"
+      "esbuild"
     ]
   }
 }
