@@ -72,9 +72,6 @@ catalogs:
     '@formkit/auto-animate':
       specifier: ^0.9.0
       version: 0.9.0
-    '@internationalized/date':
-      specifier: ^3.8.0
-      version: 3.8.0
     '@tanstack/vue-table':
       specifier: ^8.21.3
       version: 8.21.3
@@ -222,9 +219,6 @@ importers:
       '@formkit/auto-animate':
         specifier: catalog:shadcn-vue-peer
         version: 0.9.0
-      '@internationalized/date':
-        specifier: catalog:shadcn-vue-peer
-        version: 3.8.0
       '@tanstack/vue-table':
         specifier: catalog:shadcn-vue-peer
         version: 8.21.3(vue@3.5.22(typescript@5.8.3))
