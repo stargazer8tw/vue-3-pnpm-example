@@ -182,7 +182,7 @@ const statuses: Payment['status'][] = ['pending', 'processing', 'success', 'fail
 function randomize() {
   data.value = data.value.map((item) => ({
     ...item,
-    status: statuses[Math.floor(Math.random() * statuses.length)]
+    status: statuses[Math.floor(Math.random() * statuses.length)] || 'pending'
   }))
 }
 </script>

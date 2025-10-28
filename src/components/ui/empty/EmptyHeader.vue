@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from "vue"
 import { cn } from "@/lib/utils"
 
-const props = defineProps<{
+defineProps<{
   class?: HTMLAttributes["class"]
 }>()
 </script>
@@ -12,7 +12,7 @@ const props = defineProps<{
     data-slot="empty-header"
     :class="cn(
       'flex max-w-sm flex-col items-center gap-2 text-center',
-      props.class,
+      $attrs.class ?? '',
     )"
   >
     <slot />
