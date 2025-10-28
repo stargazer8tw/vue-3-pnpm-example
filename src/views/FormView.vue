@@ -101,14 +101,14 @@ const formSchema = toTypedSchema(
     }),
     pin: z.array(z.coerce.string()).length(6, { message: 'Invalid input' }),
     type: z.enum(['all', 'mentions', 'none'], {
-      required_error: 'You need to select a notification type.'
+      message: 'You need to select a notification type.'
     }),
     language: z.string({
-      required_error: 'Please select a language.'
+      message: 'Please select a language.'
     }),
     email: z
       .string({
-        required_error: 'Please select an email to display.'
+        message: 'Please select an email to display.'
       })
       .email(),
     dob: z.string().refine((v) => v, { message: 'A date of birth is required.' }),
@@ -155,7 +155,7 @@ const onSubmit = handleSubmit((values) => {
     )
   })
 })
-const handleComplete = (e: string[]) => console.log(e.join(''))
+const handleComplete = (e: number[]) => console.log(e.join(''))
 
 const languages = [
   { label: 'English', value: 'en' },
