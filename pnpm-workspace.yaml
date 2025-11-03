@@ -35,7 +35,7 @@ catalogs:
     "@internationalized/date": ^3.10.0
     "@tanstack/vue-table": ^8.21.3
   css:
-    "@tailwindcss/postcss": ^4.1.6
+    "@tailwindcss/postcss": ^4.1.16
     "@tailwindcss/vite": ^4.1.13
     autoprefixer: ^10.4.21
     postcss: ^8.5.6
