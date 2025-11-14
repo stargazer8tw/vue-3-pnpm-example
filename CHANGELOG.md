@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1]
+
+### Added
+
+- Added prettier.
+
+### Fixed
+
+- Fixed `ComboboxInput` not apply `new york` style'.
+
+## [2.0.0]
+
+### Changed
+
+- bumping to `shadcn-vue@2.3.2`.
+
 ## [1.0.0]
 
 ### Changed
@@ -38,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - added `shadcn-vue@1.0.3` components
 
-[unreleased]: https://github.com/stargazer8tw/vue-3-pnpm-example/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/stargazer8tw/vue-3-pnpm-example/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/stargazer8tw/vue-3-pnpm-example/compare/v1.0.0...v2.0.1
 [1.0.0]: https://github.com/stargazer8tw/vue-3-pnpm-example/compare/v0.0.1...v1.0.0
 [0.0.1]: https://github.com/stargazer8tw/vue-3-pnpm-example/releases/tag/v0.0.1
