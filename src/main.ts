@@ -12,12 +12,12 @@ app.runWithContext(() => {
   router.addRoute('Home', {
     name: 'example',
     path: '',
-    component: () => import('@/views/ExampleView.vue')
+    component: () => import('@/views/ExampleView.vue'),
   })
   router.addRoute('Home', {
     name: 'notfound',
     path: 'notfound',
-    component: () => import('@/views/NotFoundView.vue')
+    component: () => import('@/views/NotFoundView.vue'),
   })
   router.beforeEach((to, from) => {
     console.debug('playground beforeEach', from, to)

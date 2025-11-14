@@ -4,7 +4,7 @@ import {
   Accordion,
   AccordionTrigger,
   AccordionItem,
-  AccordionContent
+  AccordionContent,
 } from '@/components/ui/accordion'
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
 import {
@@ -16,7 +16,7 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogCancel,
-  AlertDialogAction
+  AlertDialogAction,
 } from '@/components/ui/alert-dialog'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
@@ -29,13 +29,9 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-  CardFooter
+  CardFooter,
 } from '@/components/ui/card'
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger
-} from '@/components/ui/collapsible'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card'
@@ -44,26 +40,21 @@ import {
   SelectTrigger,
   SelectValue,
   SelectContent,
-  SelectItem
+  SelectItem,
 } from '@/components/ui/select'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { toast, type ToastT } from 'vue-sonner'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 import {
   ChevronsUpDownIcon,
   RocketIcon,
   BoldIcon,
   ItalicIcon,
-  UnderlineIcon
+  UnderlineIcon,
 } from 'lucide-vue-next'
 
 // accordion
@@ -73,18 +64,18 @@ const accordionItems = [
   {
     value: 'item-1',
     title: 'Is it accessible?',
-    content: 'Yes. It adheres to the WAI-ARIA design pattern.'
+    content: 'Yes. It adheres to the WAI-ARIA design pattern.',
   },
   {
     value: 'item-2',
     title: 'Is it unstyled?',
-    content: "Yes. It's unstyled by default, giving you freedom over the look and feel."
+    content: "Yes. It's unstyled by default, giving you freedom over the look and feel.",
   },
   {
     value: 'item-3',
     title: 'Can it be animated?',
-    content: 'Yes! You can use the transition prop to configure the animation.'
-  }
+    content: 'Yes! You can use the transition prop to configure the animation.',
+  },
 ]
 // Collapsible
 const isOpen = ref(false)
@@ -232,34 +223,41 @@ watchEffect((cleanupFn) => {
     <h1>Skeleton</h1>
     <Skeleton class="w-[100px] h-5 rounded-full" />
     <h1>Toast</h1>
-    <Button variant="outline" class="bg-destructive-background" @click="
-      () => {
-        toast.warning('Event has been created', {
-          description: 'Friday, February 10, 2023 at 5:57 PM',
-          dismissible: false,
-          duration: 1000,
-          onDismiss: (toast: ToastT) => console.log('dismiss'),
-          onAutoClose: (toast: ToastT) => console.log('autoclose'),
-          action: {
-            label: 'Undo',
-            onClick: () => console.log('Undo'),
-          }
-        })
-      }
-    ">
+    <Button
+      variant="outline"
+      class="bg-destructive-background"
+      @click="
+        () => {
+          toast.warning('Event has been created', {
+            description: 'Friday, February 10, 2023 at 5:57 PM',
+            dismissible: false,
+            duration: 1000,
+            onDismiss: (toast: ToastT) => console.log('dismiss'),
+            onAutoClose: (toast: ToastT) => console.log('autoclose'),
+            action: {
+              label: 'Undo',
+              onClick: () => console.log('Undo'),
+            },
+          })
+        }
+      "
+    >
       Add to calendar
     </Button>
-    <Button variant="destructive" @click="
-      () => {
-        toast('Event has been created', {
-          description: 'Sunday, December 03, 2023 at 9:00 AM',
-          action: {
-            label: 'Undo',
-            onClick: () => console.log('Undo'),
-          },
-        })
-      }
-    ">
+    <Button
+      variant="destructive"
+      @click="
+        () => {
+          toast('Event has been created', {
+            description: 'Sunday, December 03, 2023 at 9:00 AM',
+            action: {
+              label: 'Undo',
+              onClick: () => console.log('Undo'),
+            },
+          })
+        }
+      "
+    >
       Show Toast
     </Button>
     <h1>Toggle Group</h1>

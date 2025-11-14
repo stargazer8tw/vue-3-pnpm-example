@@ -10,7 +10,7 @@ import {
   today,
   CalendarDate,
   DateFormatter,
-  getLocalTimeZone
+  getLocalTimeZone,
 } from '@internationalized/date'
 import { CalendarIcon } from 'lucide-vue-next'
 import { type Ref, ref } from 'vue'
@@ -21,11 +21,11 @@ const dateValue = ref<DateValue>()
 dateValue.value = today(getLocalTimeZone())
 // date pick
 const df = new DateFormatter('en-US', {
-  dateStyle: 'long'
+  dateStyle: 'long',
 })
 
 const dfm = new DateFormatter('en-US', {
-  dateStyle: 'medium'
+  dateStyle: 'medium',
 })
 
 const value = ref<DateValue>()
@@ -33,7 +33,7 @@ const value = ref<DateValue>()
 // data range
 const rangeValue = ref({
   start: new CalendarDate(2022, 1, 20),
-  end: new CalendarDate(2022, 1, 20).add({ days: 20 })
+  end: new CalendarDate(2022, 1, 20).add({ days: 20 }),
 }) as Ref<DateRange>
 </script>
 

@@ -5,5 +5,5 @@ import 'vue-sonner/style.css'
 
 <template>
   <Toaster />
-  <router-view class="min-h-screen"/>
+  <router-view class="min-h-screen" />
 </template>

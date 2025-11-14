@@ -7,7 +7,7 @@ import type {
   ExpandedState,
   SortingState,
   Updater,
-  VisibilityState
+  VisibilityState,
 } from '@tanstack/vue-table'
 import {
   FlexRender,
@@ -16,7 +16,7 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  useVueTable
+  useVueTable,
 } from '@tanstack/vue-table'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
@@ -24,7 +24,7 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuCheckboxItem
+  DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
 import {
@@ -33,7 +33,7 @@ import {
   TableRow,
   TableHead,
   TableBody,
-  TableCell
+  TableCell,
 } from '@/components/ui/table'
 import {
   Pagination,
@@ -43,7 +43,7 @@ import {
   PaginationItem,
   PaginationLast,
   PaginationNext,
-  PaginationPrevious
+  PaginationPrevious,
 } from '@/components/ui/pagination'
 
 interface Payment {
@@ -58,14 +58,14 @@ const data = shallowRef<Payment[]>([
     id: '728ed52f',
     amount: 100,
     status: 'pending',
-    email: 'm@example.com'
+    email: 'm@example.com',
   },
   {
     id: '489e1d42',
     amount: 125,
     status: 'processing',
-    email: 'example@gmail.com'
-  }
+    email: 'example@gmail.com',
+  },
   // ...
 ])
 const columns: ColumnDef<Payment>[] = [
@@ -76,22 +76,22 @@ const columns: ColumnDef<Payment>[] = [
         checked:
           table.getIsAllPageRowsSelected() ||
           ((table.getIsSomePageRowsSelected() && 'indeterminate') as boolean | 'indeterminate'),
-        'onUpdate:modelValue': value => table.toggleAllPageRowsSelected(!!value),
-        ariaLabel: 'Select all'
+        'onUpdate:modelValue': (value) => table.toggleAllPageRowsSelected(!!value),
+        ariaLabel: 'Select all',
       }),
     cell: ({ row }) =>
       h(Checkbox, {
         checked: row.getIsSelected(),
-        'onUpdate:modelValue': value => row.toggleSelected(!!value),
-        ariaLabel: 'Select row'
+        'onUpdate:modelValue': (value) => row.toggleSelected(!!value),
+        ariaLabel: 'Select row',
       }),
     enableSorting: false,
-    enableHiding: false
+    enableHiding: false,
   },
   {
     accessorKey: 'status',
     header: 'Status',
-    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('status'))
+    cell: ({ row }) => h('div', { class: 'capitalize' }, row.getValue('status')),
   },
   {
     accessorKey: 'email',
@@ -100,12 +100,12 @@ const columns: ColumnDef<Payment>[] = [
         Button,
         {
           variant: 'ghost',
-          onClick: () => column.toggleSorting(column.getIsSorted() === 'asc')
+          onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
         },
         () => ['Email', h(ArrowUpIcon, { class: 'ml-2 h-4 w-4' })]
       )
     },
-    cell: ({ row }) => h('div', { class: 'lowercase' }, row.getValue('email'))
+    cell: ({ row }) => h('div', { class: 'lowercase' }, row.getValue('email')),
   },
   {
     accessorKey: 'amount',
@@ -116,15 +116,15 @@ const columns: ColumnDef<Payment>[] = [
       // Format the amount as a dollar amount
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD'
+        currency: 'USD',
       }).format(amount)
 
       return h('div', { class: 'text-right font-medium' }, formatted)
-    }
+    },
   },
   {
     id: 'actions',
-    enableHiding: false
+    enableHiding: false,
     // cell: ({ row }) => {
     // const payment = row.original
     // return h('div', { class: 'relative' }, h(DropdownAction, {
@@ -132,7 +132,7 @@ const columns: ColumnDef<Payment>[] = [
     //   onExpand: row.toggleExpanded,
     // }))
     // },
-  }
+  },
 ]
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -174,15 +174,15 @@ const table = useVueTable({
     },
     get expanded() {
       return expanded.value
-    }
-  }
+    },
+  },
 })
 
 const statuses: Payment['status'][] = ['pending', 'processing', 'success', 'failed']
 function randomize() {
   data.value = data.value.map((item) => ({
     ...item,
-    status: statuses[Math.floor(Math.random() * statuses.length)] || 'pending'
+    status: statuses[Math.floor(Math.random() * statuses.length)] || 'pending',
   }))
 }
 </script>
@@ -209,9 +209,11 @@ function randomize() {
             :key="column.id"
             class="capitalize"
             :checked="column.getIsVisible()"
-            @update:model-value="(value) => {
-              column.toggleVisibility(!!value)
-            }"
+            @update:model-value="
+              (value) => {
+                column.toggleVisibility(!!value)
+              }
+            "
           >
             {{ column.id }}
           </DropdownMenuCheckboxItem>
@@ -259,18 +261,20 @@ function randomize() {
         {{ table.getFilteredSelectedRowModel().rows.length }} of
         {{ table.getFilteredRowModel().rows.length }} row(s) selected.
       </div>
-      <Pagination v-slot="{ page }" :items-per-page="10" :total="100" :sibling-count="1" show-edges :default-page="2">
+      <Pagination
+        v-slot="{ page }"
+        :items-per-page="10"
+        :total="100"
+        :sibling-count="1"
+        show-edges
+        :default-page="2"
+      >
         <PaginationContent v-slot="{ items }" class="flex items-center gap-1">
           <PaginationFirst />
           <PaginationPrevious />
 
           <template v-for="(item, index) in items">
-            <PaginationItem
-              v-if="item.type === 'page'"
-              :key="index"
-              :value="item.value"
-              as-child
-            >
+            <PaginationItem v-if="item.type === 'page'" :key="index" :value="item.value" as-child>
               <Button class="w-10 h-10 p-0" :variant="item.value === page ? 'default' : 'outline'">
                 {{ item.value }}
               </Button>

@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
-import { useRouter } from 'vue-router';
+import { computed, onMounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 const router = useRouter()
 const flag = ref(false)
 const initRouterView = computed(() => {
-  if (flag.value)
-    return true
+  if (flag.value) return true
   return false
 })
 onMounted(() => {
@@ -23,7 +22,7 @@ watch(
     }
   },
   {
-    flush: 'post'
+    flush: 'post',
   }
 )
 </script>

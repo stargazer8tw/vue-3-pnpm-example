@@ -6,7 +6,7 @@ import {
   StepperItem,
   StepperSeparator,
   StepperTitle,
-  StepperTrigger
+  StepperTrigger,
 } from '@/components/ui/stepper'
 import {
   Breadcrumb,
@@ -15,7 +15,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator
+  BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import {
   ContextMenu,
@@ -30,13 +30,13 @@ import {
   ContextMenuCheckboxItem,
   ContextMenuRadioGroup,
   ContextMenuLabel,
-  ContextMenuRadioItem
+  ContextMenuRadioItem,
 } from '@/components/ui/context-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {
   Menubar,
@@ -51,7 +51,7 @@ import {
   MenubarSub,
   MenubarSubContent,
   MenubarSubTrigger,
-  MenubarTrigger
+  MenubarTrigger,
 } from '@/components/ui/menubar'
 import {
   NavigationMenu,
@@ -60,7 +60,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
+  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import { CheckIcon, CircleIcon, DotIcon } from 'lucide-vue-next'
 
@@ -69,53 +69,53 @@ const components: { title: string; href: string; description: string }[] = [
     title: 'Alert Dialog',
     href: '/docs/components/alert-dialog',
     description:
-      'A modal dialog that interrupts the user with important content and expects a response.'
+      'A modal dialog that interrupts the user with important content and expects a response.',
   },
   {
     title: 'Hover Card',
     href: '/docs/components/hover-card',
-    description: 'For sighted users to preview content available behind a link.'
+    description: 'For sighted users to preview content available behind a link.',
   },
   {
     title: 'Progress',
     href: '/docs/components/progress',
     description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.'
+      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
   },
   {
     title: 'Scroll-area',
     href: '/docs/components/scroll-area',
-    description: 'Visually or semantically separates content.'
+    description: 'Visually or semantically separates content.',
   },
   {
     title: 'Tabs',
     href: '/docs/components/tabs',
     description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.'
+      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
   },
   {
     title: 'Tooltip',
     href: '/docs/components/tooltip',
     description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
-  }
+      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+  },
 ]
 const steps = [
   {
     step: 1,
     title: 'Your details',
-    description: 'Provide your name and email'
+    description: 'Provide your name and email',
   },
   {
     step: 2,
     title: 'Company details',
-    description: 'A few details about your company'
+    description: 'A few details about your company',
   },
   {
     step: 3,
     title: 'Invite your team',
-    description: 'Start collaborating with your team'
-  }
+    description: 'Start collaborating with your team',
+  },
 ]
 </script>
 

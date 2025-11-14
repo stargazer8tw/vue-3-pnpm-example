@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogScrollContent,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
 } from '@/components/ui/dialog'
 </script>
 
