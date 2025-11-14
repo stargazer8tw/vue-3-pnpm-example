@@ -67,7 +67,7 @@ catalogs:
     '@vue/eslint-config-prettier': ^10.2.0
     '@vue/eslint-config-typescript': ^14.6.0
     eslint: ^9.33.0
-    eslint-plugin-vue: ~10.4.0
+    eslint-plugin-vue: ~10.5.1
     jiti: ^2.5.1
   vue-test:
     '@types/jsdom': ^21.1.7
