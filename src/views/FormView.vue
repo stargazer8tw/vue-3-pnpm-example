@@ -8,24 +8,35 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
+  FormMessage,
 } from '@/components/ui/form'
 import {
   NumberField,
   NumberFieldContent,
   NumberFieldDecrement,
   NumberFieldIncrement,
-  NumberFieldInput
+  NumberFieldInput,
 } from '@/components/ui/number-field'
 import { PinInput, PinInputGroup } from '@/components/ui/pin-input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import {
+  Combobox,
+  ComboboxAnchor,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxItemIndicator,
+  ComboboxList,
+  ComboboxTrigger,
+} from '@/components/ui/combobox'
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList
+  CommandList,
 } from '@/components/ui/command'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
@@ -35,7 +46,7 @@ import {
   SelectGroup,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
 import { toast } from 'vue-sonner'
@@ -45,7 +56,7 @@ import {
   DateFormatter,
   getLocalTimeZone,
   parseDate,
-  today
+  today,
 } from '@internationalized/date'
 import { Switch } from '@/components/ui/switch'
 import {
@@ -53,7 +64,7 @@ import {
   TagsInputInput,
   TagsInputItem,
   TagsInputItemDelete,
-  TagsInputItemText
+  TagsInputItemText,
 } from '@/components/ui/tags-input'
 import { Textarea } from '@/components/ui/textarea'
 
@@ -68,28 +79,28 @@ import * as z from 'zod'
 const items = [
   {
     id: 'recents',
-    label: 'Recents'
+    label: 'Recents',
   },
   {
     id: 'home',
-    label: 'Home'
+    label: 'Home',
   },
   {
     id: 'applications',
-    label: 'Applications'
+    label: 'Applications',
   },
   {
     id: 'desktop',
-    label: 'Desktop'
+    label: 'Desktop',
   },
   {
     id: 'downloads',
-    label: 'Downloads'
+    label: 'Downloads',
   },
   {
     id: 'documents',
-    label: 'Documents'
-  }
+    label: 'Documents',
+  },
 ] as const
 
 const formSchema = toTypedSchema(
@@ -97,18 +108,18 @@ const formSchema = toTypedSchema(
     username: z.string().min(2).max(50),
     age: z.number().gt(18, 'min 18').lt(20, 'less 20'),
     items: z.array(z.string()).refine((value) => value.some((item) => item), {
-      message: 'You have to select at least one item.'
+      message: 'You have to select at least one item.',
     }),
     pin: z.array(z.coerce.string()).length(6, { message: 'Invalid input' }),
     type: z.enum(['all', 'mentions', 'none'], {
-      message: 'You need to select a notification type.'
+      message: 'You need to select a notification type.',
     }),
     language: z.string({
-      message: 'Please select a language.'
+      message: 'Please select a language.',
     }),
     email: z
       .string({
-        message: 'Please select an email to display.'
+        message: 'Please select an email to display.',
       })
       .email(),
     dob: z.string().refine((v) => v, { message: 'A date of birth is required.' }),
@@ -119,11 +130,11 @@ const formSchema = toTypedSchema(
     bio: z
       .string()
       .min(10, {
-        message: 'Bio must be at least 10 characters.'
+        message: 'Bio must be at least 10 characters.',
       })
       .max(160, {
-        message: 'Bio must not be longer than 30 characters.'
-      })
+        message: 'Bio must not be longer than 30 characters.',
+      }),
   })
 )
 
@@ -141,8 +152,8 @@ const { isFieldDirty, setFieldValue, handleSubmit, values } = useForm({
     security_emails: true,
     fruits: ['Apple', 'Banana'],
     items: ['recents', 'home'],
-    bio: 'this is example'
-  }
+    bio: 'this is example',
+  },
 })
 
 const onSubmit = handleSubmit((values) => {
@@ -152,7 +163,7 @@ const onSubmit = handleSubmit((values) => {
       'pre',
       { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' },
       h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))
-    )
+    ),
   })
 })
 const handleComplete = (e: number[]) => console.log(e.join(''))
@@ -166,18 +177,18 @@ const languages = [
   { label: 'Russian', value: 'ru' },
   { label: 'Japanese', value: 'ja' },
   { label: 'Korean', value: 'ko' },
-  { label: 'Chinese', value: 'zh' }
+  { label: 'Chinese', value: 'zh' },
 ] as const
 
 const df = new DateFormatter('zh-TW', {
-  dateStyle: 'long'
+  dateStyle: 'long',
 })
 
 const datePlaceholder = ref()
 
 const dateValue = computed({
   get: () => (values.dob ? parseDate(values.dob) : undefined),
-  set: (val) => val
+  set: (val) => val,
 })
 </script>
 
@@ -350,6 +361,57 @@ const dateValue = computed({
             </FormItem>
           </RadioGroup>
         </FormControl>
+        <FormMessage />
+      </FormItem>
+    </FormField>
+    <FormField name="language">
+      <FormItem class="flex flex-col">
+        <FormLabel>Language</FormLabel>
+
+        <Combobox by="label">
+          <FormControl>
+            <ComboboxAnchor>
+              <div class="relative w-full max-w-sm items-center">
+                <ComboboxInput
+                  :display-value="(val) => val?.label ?? ''"
+                  placeholder="Select language..."
+                />
+                <ComboboxTrigger
+                  class="absolute end-0 inset-y-0 flex items-center justify-center px-3"
+                >
+                  <ChevronsUpDown class="size-4 text-muted-foreground" />
+                </ComboboxTrigger>
+              </div>
+            </ComboboxAnchor>
+          </FormControl>
+
+          <ComboboxList>
+            <ComboboxEmpty> Nothing found. </ComboboxEmpty>
+
+            <ComboboxGroup>
+              <ComboboxItem
+                v-for="language in languages"
+                :key="language.value"
+                :value="language"
+                @select="
+                  () => {
+                    setFieldValue('language', language.value)
+                  }
+                "
+              >
+                {{ language.label }}
+
+                <ComboboxItemIndicator>
+                  <Check :class="cn('ml-auto h-4 w-4')" />
+                </ComboboxItemIndicator>
+              </ComboboxItem>
+            </ComboboxGroup>
+          </ComboboxList>
+        </Combobox>
+
+        <FormDescription>
+          This is the language that will be used in the dashboard.
+        </FormDescription>
         <FormMessage />
       </FormItem>
     </FormField>
