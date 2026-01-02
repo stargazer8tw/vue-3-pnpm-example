@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 const props = withDefaults(
   defineProps<PinInputRootProps<Type> & { class?: HTMLAttributes['class'] }>(),
   {
-    modelValue: () => [],
+    otp: true,
   }
 )
 const emits = defineEmits<PinInputRootEmits<Type>>()
@@ -20,6 +20,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <PinInputRoot
+    :otp="props.otp"
     data-slot="pin-input"
     v-bind="forwarded"
     :class="
