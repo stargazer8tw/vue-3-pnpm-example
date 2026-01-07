@@ -62,7 +62,7 @@ catalogs:
     '@vitest/eslint-plugin': ^1.3.4
     '@vitest/ui': ^3.2.4
     '@vue/test-utils': ^2.4.6
-    jsdom: ^26.1.0
+    jsdom: ^27.4.0
     vitest: ^3.2.4
 
 minimumReleaseAge: 10080
