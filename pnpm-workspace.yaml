@@ -63,7 +63,7 @@ catalogs:
     '@vitest/ui': ^3.2.4
     '@vue/test-utils': ^2.4.6
     jsdom: ^26.1.0
-    vitest: ^3.2.4
+    vitest: ^4.0.16
 
 minimumReleaseAge: 10080
 
