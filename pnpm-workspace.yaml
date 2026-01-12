@@ -12,7 +12,7 @@ catalogs:
     '@fontsource-variable/noto-sans-sc': ^5.2.5
     '@fontsource-variable/noto-sans-tc': ^5.2.5
   icons:
-    lucide-vue-next: ^0.544.0
+    lucide-vue-next: ^0.562.0
   shadcn-vue:
     '@unovis/ts': ^1.6.2
     '@unovis/vue': ^1.6.2

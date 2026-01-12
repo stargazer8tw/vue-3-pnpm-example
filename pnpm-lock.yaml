@@ -29,8 +29,8 @@ catalogs:
       version: 1.4.0
   icons:
     lucide-vue-next:
-      specifier: ^0.544.0
-      version: 0.544.0
+      specifier: ^0.562.0
+      version: 0.562.0
   shadcn-vue:
     '@unovis/ts':
       specifier: ^1.6.2
@@ -196,7 +196,7 @@ importers:
         version: 10.4.23(postcss@8.5.6)
       lucide-vue-next:
         specifier: catalog:icons
-        version: 0.544.0(vue@3.5.26(typescript@5.9.3))
+        version: 0.562.0(vue@3.5.26(typescript@5.9.3))
       npm-run-all2:
         specifier: catalog:vite
         version: 8.0.4
@@ -1803,8 +1803,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.544.0:
-    resolution: {integrity: sha512-mDp/AdGOPIDkpFHnFiTWgQgCST9aBXHVaiobZfOMIvv7nrOukzF/TP+7KoOwrngdWRaH9TMiepMBIX1vsgKJ3g==}
+  lucide-vue-next@0.562.0:
+    resolution: {integrity: sha512-LN0BLGKMFulv0lnfK29r14DcngRUhIqdcaL0zXTt2o0oS9odlrjCGaU3/X9hIihOjjN8l8e+Y9G/famcNYaI7Q==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -3900,7 +3900,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.544.0(vue@3.5.26(typescript@5.9.3)):
+  lucide-vue-next@0.562.0(vue@3.5.26(typescript@5.9.3)):
     dependencies:
       vue: 3.5.26(typescript@5.9.3)
 
