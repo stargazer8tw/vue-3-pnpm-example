@@ -43,5 +43,9 @@ pnpm build
 
 [tailwindcss v4](https://v4.shadcn-vue.com/)
 
+```shell
+pnpm dlx shadcn-vue@latest add
+```
+
 ### TODO
 
