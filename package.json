@@ -12,7 +12,7 @@
     "format": "prettier --write src/",
     "update-browserslist": "pnpm dlx update-browserslist-db@latest"
   },
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": ">=22.0.0",
     "pnpm": ">=10.0.0"
@@ -74,6 +74,9 @@
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
       "esbuild"
-    ]
+    ],
+    "overrides": {
+      "rollup@>=4.0.0 <4.59.0": ">=4.59.0"
+    }
   }
 }
