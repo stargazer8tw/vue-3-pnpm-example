@@ -36,8 +36,8 @@ catalogs:
       specifier: ^1.6.2
       version: 1.6.2
     '@unovis/vue':
-      specifier: ^1.6.2
-      version: 1.6.2
+      specifier: ^1.6.4
+      version: 1.6.4
     '@vee-validate/zod':
       specifier: ^4.15.1
       version: 4.15.1
@@ -132,7 +132,7 @@ importers:
         version: 1.6.2
       '@unovis/vue':
         specifier: catalog:shadcn-vue
-        version: 1.6.2(@unovis/ts@1.6.2)(vue@3.5.27(typescript@5.9.3))
+        version: 1.6.4(@unovis/ts@1.6.2)(vue@3.5.27(typescript@5.9.3))
       '@vee-validate/zod':
         specifier: catalog:shadcn-vue
         version: 4.15.1(vue@3.5.27(typescript@5.9.3))(zod@4.3.6)
@@ -1077,10 +1077,10 @@ packages:
   '@unovis/ts@1.6.2':
     resolution: {integrity: sha512-kSOWRiZsU4Kk1yuJSSaJs+zJCKNg3+2A0/6/7/y1Cu5uHggwGPeE3CzKaNOal/Hpc46bnZw2VLI23mY+gDFbeQ==}
 
-  '@unovis/vue@1.6.2':
-    resolution: {integrity: sha512-vFglLeiTnNk8VaCEjctAMQXi8Vi+dc217JLkbiIkOLNLXzOClv1ZLv7QjKplRHG+eq/DKC17WSBKINsjXuYbtQ==}
+  '@unovis/vue@1.6.4':
+    resolution: {integrity: sha512-Gt5LwmwiMoB0/f1eJL29sfKD9jzlqgTHxc+lW4rMFqIG/PpHLpWL2jTJYVVFfWFd1MjTJWXYiDA06hCEjFcrAg==}
     peerDependencies:
-      '@unovis/ts': 1.6.2
+      '@unovis/ts': 1.6.4
       vue: ^3
 
   '@vee-validate/zod@4.15.1':
@@ -3141,7 +3141,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@unovis/vue@1.6.2(@unovis/ts@1.6.2)(vue@3.5.27(typescript@5.9.3))':
+  '@unovis/vue@1.6.4(@unovis/ts@1.6.2)(vue@3.5.27(typescript@5.9.3))':
     dependencies:
       '@unovis/ts': 1.6.2
       vue: 3.5.27(typescript@5.9.3)
