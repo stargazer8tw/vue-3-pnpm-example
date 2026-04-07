@@ -44,7 +44,7 @@ catalogs:
     prettier: ^3.8.1
     typescript: ~5.9.3
     unplugin-vue-components: ^28.8.0
-    vite: ^7.3.1
+    vite: ^7.3.2
     vite-plugin-vue-devtools: ^8.0.5
     vue-tsc: ^3.2.2
   vue:
@@ -70,6 +70,8 @@ catalogs:
 minimumReleaseAge: 10080
 
 minimumReleaseAgeExclude:
+  - defu@6.1.6
+  - lodash-es@4.18.1
   - vue-sonner
   - reka-ui
   - tailwindcss
