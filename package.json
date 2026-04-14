@@ -1,6 +1,6 @@
 {
   "name": "vue-project",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -27,7 +27,9 @@
     "trailingComma": "es5"
   },
   "dependencies": {
+    "pinia": "catalog:vue",
     "vue": "catalog:vue",
+    "vue-i18n": "catalog:vue",
     "vue-router": "catalog:vue"
   },
   "peerDependencies": {
@@ -43,6 +45,7 @@
     "tw-animate-css": "catalog:css",
     "vaul-vue": "catalog:shadcn-vue",
     "vee-validate": "catalog:shadcn-vue",
+    "vue-input-otp": "catalog:shadcn-vue",
     "vue-sonner": "catalog:shadcn-vue",
     "zod": "catalog:shadcn-vue"
   },
