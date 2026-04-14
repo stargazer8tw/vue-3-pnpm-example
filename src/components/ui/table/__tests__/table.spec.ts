@@ -5,6 +5,7 @@ import {
   TableBody,
   TableCaption,
   TableCell,
+  TableEmpty,
   TableFooter,
   TableHead,
   TableHeader,
@@ -166,5 +167,32 @@ describe('table', () => {
     })
 
     expect(wrapper.find('[data-slot="table"]').classes()).toContain('custom-table')
+  })
+
+  it('renders TableEmpty with default colspan', () => {
+    const wrapper = mount(TableEmpty, {
+      slots: { default: 'No data' },
+    })
+
+    expect(wrapper.find('[data-slot="table-row"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="table-cell"]').exists()).toBe(true)
+  })
+
+  it('renders TableEmpty with custom colspan', () => {
+    const wrapper = mount(TableEmpty, {
+      props: { colspan: 3 },
+      slots: { default: 'No data' },
+    })
+
+    expect(wrapper.find('[data-slot="table-cell"]').attributes('colspan')).toBe('3')
+  })
+
+  it('applies custom class to TableEmpty', () => {
+    const wrapper = mount(TableEmpty, {
+      props: { class: 'custom-empty' },
+      slots: { default: 'No data' },
+    })
+
+    expect(wrapper.find('[data-slot="table-cell"]').classes()).toContain('custom-empty')
   })
 })
