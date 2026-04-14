@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Menubar } from '@/components/ui/menubar'
+import { Menubar, MenubarLabel, MenubarSeparator } from '@/components/ui/menubar'
 
 describe('menubar', () => {
   it('renders Menubar with data-slot', () => {
@@ -30,5 +30,17 @@ describe('menubar', () => {
     })
 
     expect(wrapper.classes()).toContain('custom-menubar')
+  })
+
+  it('renders MenubarLabel with data-slot', () => {
+    const wrapper = mount(MenubarLabel)
+
+    expect(wrapper.exists()).toBe(true)
+  })
+
+  it('renders MenubarSeparator with data-slot', () => {
+    const wrapper = mount(MenubarSeparator)
+
+    expect(wrapper.exists()).toBe(true)
   })
 })
