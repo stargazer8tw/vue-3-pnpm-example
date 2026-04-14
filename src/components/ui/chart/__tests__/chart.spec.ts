@@ -38,4 +38,30 @@ describe('chart', () => {
 
     expect(wrapper.classes()).toContain('custom-chart')
   })
+
+  it('renders ChartContainer with cursor=true', () => {
+    const wrapper = mount(ChartContainer, {
+      props: { config: {}, cursor: true },
+    })
+
+    expect(wrapper.exists()).toBe(true)
+    expect(wrapper.attributes('style')).toContain('--vis-crosshair-line-stroke-width: 1px')
+  })
+
+  it('renders ChartContainer with cursor=false', () => {
+    const wrapper = mount(ChartContainer, {
+      props: { config: {}, cursor: false },
+    })
+
+    expect(wrapper.exists()).toBe(true)
+    expect(wrapper.attributes('style')).toContain('--vis-crosshair-line-stroke-width: 0px')
+  })
+
+  it('renders ChartContainer with custom id', () => {
+    const wrapper = mount(ChartContainer, {
+      props: { config: {}, id: 'my-chart' },
+    })
+
+    expect(wrapper.attributes('data-chart')).toBe('chart-my-chart')
+  })
 })

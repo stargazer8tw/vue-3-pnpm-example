@@ -30,4 +30,10 @@ describe('command', () => {
 
     expect(wrapper.classes()).toContain('custom-command')
   })
+
+  it('renders Command with default modelValue', () => {
+    const wrapper = mount(Command)
+
+    expect(wrapper.props('modelValue')).toBe('')
+  })
 })
