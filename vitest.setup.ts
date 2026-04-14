@@ -15,6 +15,16 @@ global.ResizeObserver = class ResizeObserver {
   disconnect() {}
 }
 
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
+  takeRecords() {
+    return []
+  }
+}
+
 global.matchMedia = vi.fn().mockImplementation((query) => ({
   matches: false,
   media: query,

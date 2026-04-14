@@ -46,4 +46,12 @@ describe('carousel', () => {
 
     expect(wrapper.classes()).toContain('custom-carousel')
   })
+
+  it('renders Carousel with vertical orientation', () => {
+    const wrapper = mount(Carousel, {
+      props: { orientation: 'vertical' },
+    })
+
+    expect(wrapper.exists()).toBe(true)
+  })
 })
