@@ -1,6 +1,16 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Item, ItemTitle, ItemDescription, ItemContent, ItemHeader, ItemFooter, ItemMedia, ItemActions, ItemSeparator } from '@/components/ui/item'
+import {
+  Item,
+  ItemTitle,
+  ItemDescription,
+  ItemContent,
+  ItemHeader,
+  ItemFooter,
+  ItemMedia,
+  ItemActions,
+  ItemSeparator,
+} from '@/components/ui/item'
 
 describe('item', () => {
   it('renders Item with data-slot', () => {
