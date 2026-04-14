@@ -26,6 +26,24 @@ pnpm install
 pnpm dev
 ```
 
+### Running Tests
+
+```sh
+pnpm test:unit
+```
+
+Run tests without watch mode:
+
+```sh
+pnpm test:unit --watch=false
+```
+
+Run tests with coverage:
+
+```sh
+pnpm test:unit --coverage --watch=false
+```
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
