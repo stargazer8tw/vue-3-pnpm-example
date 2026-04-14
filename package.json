@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "test:unit": "vitest",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -58,10 +59,16 @@
     "@tailwindcss/postcss": "catalog:css",
     "@tailwindcss/vite": "catalog:css",
     "@tsconfig/node22": "catalog:vite",
+    "@types/jsdom": "catalog:vitest",
     "@types/node": "catalog:vite",
     "@vitejs/plugin-vue": "catalog:vite",
+    "@vitest/coverage-v8": "catalog:vitest",
+    "@vitest/eslint-plugin": "catalog:vitest",
+    "@vitest/ui": "catalog:vitest",
+    "@vue/test-utils": "catalog:vitest",
     "@vue/tsconfig": "catalog:vite",
     "autoprefixer": "catalog:css",
+    "jsdom": "catalog:vitest",
     "lucide-vue-next": "catalog:icons",
     "npm-run-all2": "catalog:vite",
     "postcss": "catalog:css",
@@ -71,6 +78,7 @@
     "unplugin-vue-components": "catalog:vite",
     "vite": "catalog:vite",
     "vite-plugin-vue-devtools": "catalog:vite",
+    "vitest": "catalog:vitest",
     "vue-tsc": "catalog:vite"
   },
   "pnpm": {
