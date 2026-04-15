@@ -1,11 +1,12 @@
 {
   "name": "vue-project",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "test:unit": "vitest",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -27,7 +28,9 @@
     "trailingComma": "es5"
   },
   "dependencies": {
+    "pinia": "catalog:vue",
     "vue": "catalog:vue",
+    "vue-i18n": "catalog:vue",
     "vue-router": "catalog:vue"
   },
   "peerDependencies": {
@@ -43,6 +46,7 @@
     "tw-animate-css": "catalog:css",
     "vaul-vue": "catalog:shadcn-vue",
     "vee-validate": "catalog:shadcn-vue",
+    "vue-input-otp": "catalog:shadcn-vue",
     "vue-sonner": "catalog:shadcn-vue",
     "zod": "catalog:shadcn-vue"
   },
@@ -55,10 +59,16 @@
     "@tailwindcss/postcss": "catalog:css",
     "@tailwindcss/vite": "catalog:css",
     "@tsconfig/node22": "catalog:vite",
+    "@types/jsdom": "catalog:vitest",
     "@types/node": "catalog:vite",
     "@vitejs/plugin-vue": "catalog:vite",
+    "@vitest/coverage-v8": "catalog:vitest",
+    "@vitest/eslint-plugin": "catalog:vitest",
+    "@vitest/ui": "catalog:vitest",
+    "@vue/test-utils": "catalog:vitest",
     "@vue/tsconfig": "catalog:vite",
     "autoprefixer": "catalog:css",
+    "jsdom": "catalog:vitest",
     "lucide-vue-next": "catalog:icons",
     "npm-run-all2": "catalog:vite",
     "postcss": "catalog:css",
@@ -68,6 +78,7 @@
     "unplugin-vue-components": "catalog:vite",
     "vite": "catalog:vite",
     "vite-plugin-vue-devtools": "catalog:vite",
+    "vitest": "catalog:vitest",
     "vue-tsc": "catalog:vite"
   },
   "pnpm": {
