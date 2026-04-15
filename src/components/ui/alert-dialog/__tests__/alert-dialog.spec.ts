@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { AlertDialog, AlertDialogHeader, AlertDialogFooter } from '@/components/ui/alert-dialog'
+import { AlertDialog, AlertDialogFooter, AlertDialogHeader } from '@/components/ui/alert-dialog'
 
 describe('alert-dialog', () => {
   describe('AlertDialog', () => {
@@ -64,6 +64,14 @@ describe('alert-dialog', () => {
       })
 
       expect(wrapper.text()).toBe('Footer Content')
+    })
+
+    it('applies custom class', () => {
+      const wrapper = mount(AlertDialogFooter, {
+        props: { class: 'custom-footer' },
+      })
+
+      expect(wrapper.classes()).toContain('custom-footer')
     })
   })
 })
