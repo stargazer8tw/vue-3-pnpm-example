@@ -48,12 +48,83 @@ describe('alert', () => {
     expect(wrapper.attributes('data-slot')).toBe('alert-title')
   })
 
+  it('renders AlertTitle as div element', () => {
+    const wrapper = mount(AlertTitle, {
+      slots: { default: 'Title' },
+    })
+
+    expect(wrapper.element.tagName).toBe('DIV')
+  })
+
+  it('renders AlertTitle with base classes', () => {
+    const wrapper = mount(AlertTitle, {
+      slots: { default: 'Title' },
+    })
+
+    expect(wrapper.classes()).toContain('col-start-2')
+    expect(wrapper.classes()).toContain('line-clamp-1')
+    expect(wrapper.classes()).toContain('font-medium')
+    expect(wrapper.classes()).toContain('tracking-tight')
+  })
+
+  it('renders AlertTitle with slot content', () => {
+    const wrapper = mount(AlertTitle, {
+      slots: { default: 'Alert Title' },
+    })
+
+    expect(wrapper.text()).toContain('Alert Title')
+  })
+
+  it('applies custom class to AlertTitle', () => {
+    const wrapper = mount(AlertTitle, {
+      props: { class: 'custom-title' },
+      slots: { default: 'Title' },
+    })
+
+    expect(wrapper.classes()).toContain('custom-title')
+  })
+
   it('renders AlertDescription with data-slot', () => {
     const wrapper = mount(AlertDescription, {
       slots: { default: 'Description' },
     })
 
     expect(wrapper.attributes('data-slot')).toBe('alert-description')
+  })
+
+  it('renders AlertDescription as div element', () => {
+    const wrapper = mount(AlertDescription, {
+      slots: { default: 'Description' },
+    })
+
+    expect(wrapper.element.tagName).toBe('DIV')
+  })
+
+  it('renders AlertDescription with base classes', () => {
+    const wrapper = mount(AlertDescription, {
+      slots: { default: 'Description' },
+    })
+
+    expect(wrapper.classes()).toContain('text-muted-foreground')
+    expect(wrapper.classes()).toContain('col-start-2')
+    expect(wrapper.classes()).toContain('text-sm')
+  })
+
+  it('renders AlertDescription with slot content', () => {
+    const wrapper = mount(AlertDescription, {
+      slots: { default: 'Alert Description' },
+    })
+
+    expect(wrapper.text()).toContain('Alert Description')
+  })
+
+  it('applies custom class to AlertDescription', () => {
+    const wrapper = mount(AlertDescription, {
+      props: { class: 'custom-description' },
+      slots: { default: 'Description' },
+    })
+
+    expect(wrapper.classes()).toContain('custom-description')
   })
 
   it('applies custom class to Alert', () => {
