@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Toggle, ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
+import { Toggle, ToggleGroup, ToggleGroupItem } from '../'
 
 describe('toggle-group', () => {
   it('renders ToggleGroup with data-slot', () => {

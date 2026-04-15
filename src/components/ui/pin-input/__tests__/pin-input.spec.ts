@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { PinInput, PinInputGroup } from '@/components/ui/pin-input'
+import { PinInput, PinInputGroup } from '../'
 
 describe('pin-input', () => {
   it('renders PinInput as div element', () => {

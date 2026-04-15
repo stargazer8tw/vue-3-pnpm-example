@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { NavigationMenu, NavigationMenuItem } from '@/components/ui/navigation-menu'
+import { NavigationMenu, NavigationMenuItem } from '../'
 
 describe('navigation-menu', () => {
   it('renders NavigationMenu with data-slot', () => {

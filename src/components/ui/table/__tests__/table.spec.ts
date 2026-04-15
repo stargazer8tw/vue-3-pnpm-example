@@ -10,7 +10,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table'
+} from '../'
 
 describe('table', () => {
   it('renders Table with data-slot table', () => {

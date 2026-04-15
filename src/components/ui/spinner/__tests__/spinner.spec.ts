@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Spinner } from '@/components/ui/spinner'
+import { Spinner } from '../'
 
 describe('spinner', () => {
   it('renders Spinner with role and aria-label', () => {

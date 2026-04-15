@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Menubar, MenubarLabel, MenubarSeparator, MenubarShortcut } from '@/components/ui/menubar'
+import { Menubar, MenubarLabel, MenubarSeparator, MenubarShortcut } from '../'
 
 describe('menubar', () => {
   it('renders Menubar with data-slot', () => {

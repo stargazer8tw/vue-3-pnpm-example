@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { RangeCalendar } from '@/components/ui/range-calendar'
+import { RangeCalendar } from '../'
 
 describe('range-calendar', () => {
   it('renders RangeCalendar without crashing', () => {

@@ -8,7 +8,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@/components/ui/drawer'
+} from '../'
 
 describe('drawer', () => {
   it('renders Drawer as div element', () => {

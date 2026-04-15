@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Stepper } from '@/components/ui/stepper'
+import { Stepper } from '../'
 
 describe('stepper', () => {
   it('renders Stepper with base classes', () => {

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Input } from '@/components/ui/input'
+import { Input } from '../'
 
 describe('input', () => {
   it('renders Input with data-slot', () => {

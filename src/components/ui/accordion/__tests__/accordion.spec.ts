@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion'
+} from '../'
 
 describe('accordion', () => {
   it('renders Accordion with data-slot', () => {

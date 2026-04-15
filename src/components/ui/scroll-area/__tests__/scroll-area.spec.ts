@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ScrollArea } from '@/components/ui/scroll-area'
+import { ScrollArea } from '../'
 
 describe('scroll-area', () => {
   it('renders ScrollArea with data-slot', () => {

@@ -7,7 +7,7 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from '@/components/ui/input-group'
+} from '../'
 
 describe('input-group', () => {
   it('renders InputGroup with data-slot', () => {

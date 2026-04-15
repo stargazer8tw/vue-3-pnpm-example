@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@/components/ui/button-group'
+import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '../'
 
 describe('button-group', () => {
   it('renders ButtonGroup as div element', () => {

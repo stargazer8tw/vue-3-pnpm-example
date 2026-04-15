@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Separator } from '@/components/ui/separator'
+import { Separator } from '../'
 
 describe('separator', () => {
   it('renders Separator with data-slot', () => {

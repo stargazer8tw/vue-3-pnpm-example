@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Combobox } from '@/components/ui/combobox'
+import { Combobox } from '../'
 
 describe('combobox', () => {
   it('renders Combobox as div element', () => {

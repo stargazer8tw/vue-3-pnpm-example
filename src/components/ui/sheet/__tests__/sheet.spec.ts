@@ -8,7 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet'
+} from '../'
 
 describe('sheet', () => {
   it('renders Sheet as div element', () => {

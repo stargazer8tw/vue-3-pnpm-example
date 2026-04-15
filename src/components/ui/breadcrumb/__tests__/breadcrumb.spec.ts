@@ -8,7 +8,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
+} from '../'
 
 describe('breadcrumb', () => {
   it('renders Breadcrumb with data-slot', () => {

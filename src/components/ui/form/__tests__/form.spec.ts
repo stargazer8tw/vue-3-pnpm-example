@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { FormItem } from '@/components/ui/form'
+import { FormItem } from '../'
 
 describe('form', () => {
   describe('FormItem', () => {

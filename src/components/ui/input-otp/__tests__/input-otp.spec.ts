@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { InputOTP } from '@/components/ui/input-otp'
+import { InputOTP } from '../'
 
 describe('input-otp', () => {
   it('renders InputOTP without crashing', () => {

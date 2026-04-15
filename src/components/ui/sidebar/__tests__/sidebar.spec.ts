@@ -22,7 +22,7 @@ import {
   SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
-} from '@/components/ui/sidebar'
+} from '../'
 
 describe('sidebar', () => {
   it('renders SidebarMenuItem with data-slot', () => {

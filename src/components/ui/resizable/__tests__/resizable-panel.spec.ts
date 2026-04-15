@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
+import { ResizablePanel, ResizablePanelGroup } from '../'
 
 describe('resizable-panel', () => {
   it('renders ResizablePanelGroup with data-slot', () => {

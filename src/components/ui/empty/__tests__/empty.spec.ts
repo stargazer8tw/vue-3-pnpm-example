@@ -7,7 +7,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from '@/components/ui/empty'
+} from '../'
 
 describe('empty', () => {
   it('renders Empty with data-slot', () => {

@@ -9,7 +9,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from '@/components/ui/command'
+} from '../'
 
 describe('command', () => {
   it('renders Command with data-slot', () => {

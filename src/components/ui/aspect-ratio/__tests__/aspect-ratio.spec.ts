@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { AspectRatio } from '../'
 
 describe('aspect-ratio', () => {
   it('renders AspectRatio as div element', () => {

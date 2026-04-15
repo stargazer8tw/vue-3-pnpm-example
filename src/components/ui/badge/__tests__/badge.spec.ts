@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Badge, badgeVariants } from '@/components/ui/badge'
+import { Badge, badgeVariants } from '../'
 
 describe('badge', () => {
   it('renders Badge with data-slot', () => {

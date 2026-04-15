@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { AlertDialog, AlertDialogFooter, AlertDialogHeader } from '@/components/ui/alert-dialog'
+import { AlertDialog, AlertDialogFooter, AlertDialogHeader } from '../'
 
 describe('alert-dialog', () => {
   describe('AlertDialog', () => {

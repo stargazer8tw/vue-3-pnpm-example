@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Switch } from '@/components/ui/switch'
+import { Switch } from '../'
 
 describe('switch', () => {
   it('renders Switch with data-slot', () => {

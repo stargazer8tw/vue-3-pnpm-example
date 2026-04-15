@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Progress } from '@/components/ui/progress'
+import { Progress } from '../'
 
 describe('progress', () => {
   it('renders Progress with data-slot', () => {

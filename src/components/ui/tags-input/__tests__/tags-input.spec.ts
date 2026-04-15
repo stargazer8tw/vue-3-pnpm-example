@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { TagsInput } from '@/components/ui/tags-input'
+import { TagsInput } from '../'
 
 describe('tags-input', () => {
   it('renders TagsInput with base classes', () => {

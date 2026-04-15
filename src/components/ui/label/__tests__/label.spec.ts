@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Label } from '@/components/ui/label'
+import { Label } from '../'
 
 describe('label', () => {
   it('renders Label with data-slot', () => {

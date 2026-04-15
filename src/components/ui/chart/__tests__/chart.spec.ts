@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ChartContainer } from '@/components/ui/chart'
+import { ChartContainer } from '../'
 
 describe('chart', () => {
   it('renders ChartContainer with data-slot', () => {

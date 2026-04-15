@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Popover, PopoverTrigger } from '@/components/ui/popover'
+import { Popover, PopoverTrigger } from '../'
 
 describe('popover', () => {
   it('renders Popover as div element', () => {

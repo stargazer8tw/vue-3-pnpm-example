@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '../'
 
 describe('skeleton', () => {
   it('renders Skeleton with data-slot', () => {

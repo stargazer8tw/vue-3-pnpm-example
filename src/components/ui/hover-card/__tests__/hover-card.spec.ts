@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '../'
 
 describe('hover-card', () => {
   it('renders HoverCard as div element', () => {

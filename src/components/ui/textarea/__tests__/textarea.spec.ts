@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Textarea } from '@/components/ui/textarea'
+import { Textarea } from '../'
 
 describe('textarea', () => {
   it('renders Textarea with data-slot', () => {

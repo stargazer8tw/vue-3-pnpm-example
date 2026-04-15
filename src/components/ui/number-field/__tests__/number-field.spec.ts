@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { NumberField, NumberFieldContent } from '@/components/ui/number-field'
+import { NumberField, NumberFieldContent } from '../'
 
 describe('number-field', () => {
   it('renders NumberField as div element', () => {

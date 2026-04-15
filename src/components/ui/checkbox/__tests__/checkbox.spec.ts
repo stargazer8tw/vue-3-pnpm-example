@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Checkbox } from '@/components/ui/checkbox'
+import { Checkbox } from '../'
 
 describe('checkbox', () => {
   it('renders Checkbox with data-slot', () => {

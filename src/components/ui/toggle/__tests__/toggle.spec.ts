@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Toggle } from '@/components/ui/toggle'
+import { Toggle } from '../'
 
 describe('toggle', () => {
   it('renders Toggle with data-slot', () => {

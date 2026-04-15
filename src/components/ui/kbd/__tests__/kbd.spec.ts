@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Kbd, KbdGroup } from '@/components/ui/kbd'
+import { Kbd, KbdGroup } from '../'
 
 describe('kbd', () => {
   it('renders Kbd component with correct tag', () => {

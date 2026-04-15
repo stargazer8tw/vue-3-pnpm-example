@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Dialog, DialogFooter, DialogHeader, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogFooter, DialogHeader, DialogTrigger } from '../'
 
 describe('dialog', () => {
   it('renders Dialog as div element', () => {

@@ -5,7 +5,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '../'
 
 describe('dropdown-menu', () => {
   it('renders DropdownMenu as div element', () => {

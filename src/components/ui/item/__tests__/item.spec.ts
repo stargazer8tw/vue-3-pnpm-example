@@ -10,7 +10,7 @@ import {
   ItemMedia,
   ItemActions,
   ItemSeparator,
-} from '@/components/ui/item'
+} from '../'
 
 describe('item', () => {
   it('renders Item with data-slot', () => {

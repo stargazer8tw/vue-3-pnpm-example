@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Alert, AlertDescription, AlertTitle, alertVariants } from '@/components/ui/alert'
+import { Alert, AlertDescription, AlertTitle, alertVariants } from '../'
 
 describe('alert', () => {
   it('renders Alert with data-slot', () => {

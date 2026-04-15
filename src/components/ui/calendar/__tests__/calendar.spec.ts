@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Calendar } from '@/components/ui/calendar'
+import { Calendar } from '../'
 
 describe('calendar', () => {
   it('renders Calendar without crashing', () => {

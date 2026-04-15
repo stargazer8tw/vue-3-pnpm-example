@@ -9,7 +9,7 @@ import {
   PaginationLast,
   PaginationNext,
   PaginationPrevious,
-} from '@/components/ui/pagination'
+} from '../'
 
 describe('pagination', () => {
   it('renders Pagination with data-slot', () => {

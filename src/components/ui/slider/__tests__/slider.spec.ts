@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Slider } from '@/components/ui/slider'
+import { Slider } from '../'
 
 describe('slider', () => {
   it('renders Slider with data-slot', () => {

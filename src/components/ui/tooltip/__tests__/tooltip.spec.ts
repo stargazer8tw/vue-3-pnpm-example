@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Tooltip, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { Tooltip, TooltipProvider, TooltipTrigger } from '../'
 
 describe('tooltip', () => {
   it('renders TooltipProvider', () => {

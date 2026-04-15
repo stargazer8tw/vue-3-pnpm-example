@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Field, FieldDescription, FieldError, FieldSeparator } from '@/components/ui/field'
+import { Field, FieldDescription, FieldError, FieldSeparator } from '../'
 
 describe('field', () => {
   it('renders Field with data-slot', () => {

@@ -5,7 +5,7 @@ import {
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuTrigger,
-} from '@/components/ui/context-menu'
+} from '../'
 
 describe('context-menu', () => {
   it('renders ContextMenu as div element', () => {

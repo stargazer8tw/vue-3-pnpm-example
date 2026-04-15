@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Collapsible, CollapsibleTrigger } from '@/components/ui/collapsible'
+import { Collapsible, CollapsibleTrigger } from '../'
 
 describe('collapsible', () => {
   it('renders Collapsible as div element', () => {
