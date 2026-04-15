@@ -35,3 +35,5 @@ global.matchMedia = vi.fn().mockImplementation((query) => ({
   removeEventListener: vi.fn(),
   dispatchEvent: vi.fn(),
 }))
+
+Element.prototype.scrollIntoView = vi.fn()
