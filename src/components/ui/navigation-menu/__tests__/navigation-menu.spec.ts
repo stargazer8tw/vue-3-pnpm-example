@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { NavigationMenu } from '@/components/ui/navigation-menu'
+import { NavigationMenu, NavigationMenuItem } from '@/components/ui/navigation-menu'
 
 describe('navigation-menu', () => {
   it('renders NavigationMenu with data-slot', () => {
@@ -43,5 +43,46 @@ describe('navigation-menu', () => {
     })
 
     expect(wrapper.classes()).toContain('custom-nav')
+  })
+
+  it('renders NavigationMenuItem with data-slot', () => {
+    const wrapper = mount({
+      template: `
+        <NavigationMenu>
+          <NavigationMenuItem>Item</NavigationMenuItem>
+        </NavigationMenu>
+      `,
+      components: { NavigationMenu, NavigationMenuItem },
+    })
+
+    expect(wrapper.findComponent(NavigationMenuItem).attributes('data-slot')).toBe(
+      'navigation-menu-item'
+    )
+  })
+
+  it('renders NavigationMenuItem with base classes', () => {
+    const wrapper = mount({
+      template: `
+        <NavigationMenu>
+          <NavigationMenuItem>Item</NavigationMenuItem>
+        </NavigationMenu>
+      `,
+      components: { NavigationMenu, NavigationMenuItem },
+    })
+
+    expect(wrapper.findComponent(NavigationMenuItem).classes()).toContain('relative')
+  })
+
+  it('applies custom class to NavigationMenuItem', () => {
+    const wrapper = mount({
+      template: `
+        <NavigationMenu>
+          <NavigationMenuItem class="custom-item">Item</NavigationMenuItem>
+        </NavigationMenu>
+      `,
+      components: { NavigationMenu, NavigationMenuItem },
+    })
+
+    expect(wrapper.findComponent(NavigationMenuItem).classes()).toContain('custom-item')
   })
 })

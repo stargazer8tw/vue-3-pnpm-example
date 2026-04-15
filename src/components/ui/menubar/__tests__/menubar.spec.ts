@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Menubar, MenubarLabel, MenubarSeparator } from '@/components/ui/menubar'
+import { Menubar, MenubarLabel, MenubarSeparator, MenubarShortcut } from '@/components/ui/menubar'
 
 describe('menubar', () => {
   it('renders Menubar with data-slot', () => {
@@ -42,5 +42,57 @@ describe('menubar', () => {
     const wrapper = mount(MenubarSeparator)
 
     expect(wrapper.exists()).toBe(true)
+  })
+
+  it('renders MenubarSeparator with base classes', () => {
+    const wrapper = mount(MenubarSeparator)
+
+    expect(wrapper.classes()).toContain('bg-border')
+    expect(wrapper.classes()).toContain('-mx-1')
+  })
+
+  it('applies custom class to MenubarSeparator', () => {
+    const wrapper = mount(MenubarSeparator, {
+      props: { class: 'custom-separator' },
+    })
+
+    expect(wrapper.classes()).toContain('custom-separator')
+  })
+
+  it('renders MenubarShortcut with data-slot', () => {
+    const wrapper = mount(MenubarShortcut)
+
+    expect(wrapper.attributes('data-slot')).toBe('menubar-shortcut')
+  })
+
+  it('renders MenubarShortcut as span element', () => {
+    const wrapper = mount(MenubarShortcut)
+
+    expect(wrapper.element.tagName).toBe('SPAN')
+  })
+
+  it('renders MenubarShortcut with base classes', () => {
+    const wrapper = mount(MenubarShortcut)
+
+    expect(wrapper.classes()).toContain('text-muted-foreground')
+    expect(wrapper.classes()).toContain('ml-auto')
+    expect(wrapper.classes()).toContain('text-xs')
+    expect(wrapper.classes()).toContain('tracking-widest')
+  })
+
+  it('renders MenubarShortcut with slot content', () => {
+    const wrapper = mount(MenubarShortcut, {
+      slots: { default: '⌘K' },
+    })
+
+    expect(wrapper.text()).toContain('⌘K')
+  })
+
+  it('applies custom class to MenubarShortcut', () => {
+    const wrapper = mount(MenubarShortcut, {
+      props: { class: 'custom-shortcut' },
+    })
+
+    expect(wrapper.classes()).toContain('custom-shortcut')
   })
 })
