@@ -1,11 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import {
-  DropdownMenu,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from '../'
+import { DropdownMenu, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger } from '../'
 
 describe('dropdown-menu', () => {
   it('renders DropdownMenu as div element', () => {

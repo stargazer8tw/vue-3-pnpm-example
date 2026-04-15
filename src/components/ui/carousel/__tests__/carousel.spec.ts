@@ -1,12 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '../'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../'
 
 describe('carousel', () => {
   it('renders Carousel with data-slot', () => {

@@ -1,11 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '../'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../'
 
 describe('accordion', () => {
   it('renders Accordion with data-slot', () => {
@@ -169,5 +164,32 @@ describe('accordion', () => {
     expect(content.exists()).toBe(true)
     expect(content.classes()).toContain('data-[state=closed]:animate-accordion-up')
     expect(content.classes()).toContain('data-[state=open]:animate-accordion-down')
+  })
+
+  it('toggles content when trigger is clicked', async () => {
+    const wrapper = mount({
+      template: `
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Section 1</AccordionTrigger>
+            <AccordionContent>Content 1</AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      `,
+      components: {
+        Accordion,
+        AccordionItem,
+        AccordionTrigger,
+        AccordionContent,
+      },
+    })
+
+    const trigger = wrapper.find('[data-slot="accordion-trigger"]')
+
+    await trigger.trigger('click')
+    expect(wrapper.find('[data-slot="accordion-content"]').attributes('data-state')).toBe('open')
+
+    await trigger.trigger('click')
+    expect(wrapper.find('[data-slot="accordion-content"]').attributes('data-state')).toBe('closed')
   })
 })

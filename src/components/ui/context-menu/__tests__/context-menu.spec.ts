@@ -1,11 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import {
-  ContextMenu,
-  ContextMenuSeparator,
-  ContextMenuShortcut,
-  ContextMenuTrigger,
-} from '../'
+import { ContextMenu, ContextMenuSeparator, ContextMenuShortcut, ContextMenuTrigger } from '../'
 
 describe('context-menu', () => {
   it('renders ContextMenu as div element', () => {

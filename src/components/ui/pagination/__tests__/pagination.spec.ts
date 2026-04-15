@@ -8,18 +8,18 @@ import {
   PaginationItem,
   PaginationLast,
   PaginationNext,
-  PaginationPrevious,
+  PaginationPrevious
 } from '../'
 
 describe('pagination', () => {
   it('renders Pagination with data-slot', () => {
-    const wrapper = mount(Pagination)
+    const wrapper = mount(Pagination, { props: { itemsPerPage: 10 } })
 
     expect(wrapper.attributes('data-slot')).toBe('pagination')
   })
 
   it('renders Pagination with base classes', () => {
-    const wrapper = mount(Pagination)
+    const wrapper = mount(Pagination, { props: { itemsPerPage: 10 } })
 
     expect(wrapper.classes()).toContain('mx-auto')
     expect(wrapper.classes()).toContain('flex')
@@ -28,14 +28,14 @@ describe('pagination', () => {
   })
 
   it('renders Pagination as nav element', () => {
-    const wrapper = mount(Pagination)
+    const wrapper = mount(Pagination, { props: { itemsPerPage: 10 } })
 
     expect(wrapper.element.tagName).toBe('NAV')
   })
 
   it('applies custom class to Pagination', () => {
     const wrapper = mount(Pagination, {
-      props: { class: 'custom-pagination' },
+      props: { itemsPerPage: 10, class: 'custom-pagination' }
     })
 
     expect(wrapper.classes()).toContain('custom-pagination')
@@ -44,11 +44,11 @@ describe('pagination', () => {
   it('renders PaginationContent with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>Content</PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent },
+      components: { Pagination, PaginationContent }
     })
 
     expect(wrapper.find('[data-slot="pagination-content"]').exists()).toBe(true)
@@ -57,13 +57,13 @@ describe('pagination', () => {
   it('renders PaginationEllipsis with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
             <PaginationEllipsis />
           </PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent, PaginationEllipsis },
+      components: { Pagination, PaginationContent, PaginationEllipsis }
     })
 
     expect(wrapper.find('[data-slot="pagination-ellipsis"]').exists()).toBe(true)
@@ -72,13 +72,13 @@ describe('pagination', () => {
   it('renders PaginationItem with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
-            <PaginationItem>1</PaginationItem>
+            <PaginationItem :value="1">1</PaginationItem>
           </PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent, PaginationItem },
+      components: { Pagination, PaginationContent, PaginationItem }
     })
 
     expect(wrapper.find('[data-slot="pagination-item"]').exists()).toBe(true)
@@ -87,13 +87,13 @@ describe('pagination', () => {
   it('renders PaginationFirst with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
             <PaginationFirst />
           </PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent, PaginationFirst },
+      components: { Pagination, PaginationContent, PaginationFirst }
     })
 
     expect(wrapper.find('[data-slot="pagination-first"]').exists()).toBe(true)
@@ -102,13 +102,13 @@ describe('pagination', () => {
   it('renders PaginationLast with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
             <PaginationLast />
           </PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent, PaginationLast },
+      components: { Pagination, PaginationContent, PaginationLast }
     })
 
     expect(wrapper.find('[data-slot="pagination-last"]').exists()).toBe(true)
@@ -117,13 +117,13 @@ describe('pagination', () => {
   it('renders PaginationNext with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
             <PaginationNext />
           </PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent, PaginationNext },
+      components: { Pagination, PaginationContent, PaginationNext }
     })
 
     expect(wrapper.find('[data-slot="pagination-next"]').exists()).toBe(true)
@@ -132,13 +132,13 @@ describe('pagination', () => {
   it('renders PaginationPrevious with data-slot', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
             <PaginationPrevious />
           </PaginationContent>
         </Pagination>
       `,
-      components: { Pagination, PaginationContent, PaginationPrevious },
+      components: { Pagination, PaginationContent, PaginationPrevious }
     })
 
     expect(wrapper.find('[data-slot="pagination-previous"]').exists()).toBe(true)
@@ -147,12 +147,12 @@ describe('pagination', () => {
   it('renders full pagination structure', () => {
     const wrapper = mount({
       template: `
-        <Pagination>
+        <Pagination :items-per-page="10">
           <PaginationContent>
             <PaginationFirst />
             <PaginationPrevious />
-            <PaginationItem>1</PaginationItem>
-            <PaginationItem>2</PaginationItem>
+            <PaginationItem :value="1">1</PaginationItem>
+            <PaginationItem :value="2">2</PaginationItem>
             <PaginationEllipsis />
             <PaginationNext />
             <PaginationLast />
@@ -167,8 +167,8 @@ describe('pagination', () => {
         PaginationFirst,
         PaginationLast,
         PaginationNext,
-        PaginationPrevious,
-      },
+        PaginationPrevious
+      }
     })
 
     expect(wrapper.findComponent(Pagination).exists()).toBe(true)

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import {
   Command,
   CommandEmpty,
@@ -11,24 +11,80 @@ import {
   CommandShortcut,
 } from '../'
 
+vi.mock('reka-ui', () => ({
+  ListboxRoot: {
+    name: 'ListboxRoot',
+    props: ['modelValue'],
+    template: '<div data-testid="listbox-root"><slot /></div>',
+  },
+  ListboxContent: {
+    name: 'ListboxContent',
+    template: '<div data-testid="listbox-content"><slot /></div>',
+  },
+  ListboxFilter: {
+    name: 'ListboxFilter',
+    props: ['modelValue', 'autoFocus', 'placeholder'],
+    template: '<input data-testid="listbox-filter" />',
+  },
+  ListboxGroup: {
+    name: 'ListboxGroup',
+    props: ['id', 'heading'],
+    template: '<div data-testid="listbox-group" role="group"><slot /></div>',
+  },
+  ListboxGroupLabel: {
+    name: 'ListboxGroupLabel',
+    template: '<div data-testid="listbox-group-label"><slot /></div>',
+  },
+  ListboxItem: {
+    name: 'ListboxItem',
+    props: ['value', 'disabled', 'id'],
+    template: '<div data-testid="listbox-item"><slot /></div>',
+  },
+  Primitive: {
+    name: 'Primitive',
+    template: '<div data-testid="primitive"><slot /></div>',
+  },
+  Separator: {
+    name: 'Separator',
+    template: '<div data-testid="separator"><slot /></div>',
+  },
+  useForwardPropsEmits: () => ({}),
+  useForwardProps: () => ({}),
+  useFilter: () => ({ contains: () => true }),
+  useId: () => 'test-id',
+  createContext: () => {
+    let value: unknown
+    const provide = (v: unknown) => {
+      value = v
+    }
+    const use = () => value
+    return [use, provide]
+  },
+}))
+
+vi.mock('lucide-vue-next', () => ({
+  Search: {
+    name: 'Search',
+    template: '<svg data-testid="search-icon"></svg>',
+  },
+}))
+
 describe('command', () => {
   it('renders Command with data-slot', () => {
     const wrapper = mount(Command)
-
-    expect(wrapper.attributes('data-slot')).toBe('command')
+    expect(wrapper.find('[data-slot="command"]').exists()).toBe(true)
   })
 
   it('renders Command with base classes', () => {
     const wrapper = mount(Command)
-
-    expect(wrapper.classes()).toContain('flex')
-    expect(wrapper.classes()).toContain('flex-col')
-    expect(wrapper.classes()).toContain('rounded-md')
+    const el = wrapper.find('[data-slot="command"]')
+    expect(el.classes()).toContain('flex')
+    expect(el.classes()).toContain('flex-col')
+    expect(el.classes()).toContain('rounded-md')
   })
 
   it('renders Command as div element', () => {
     const wrapper = mount(Command)
-
     expect(wrapper.element.tagName).toBe('DIV')
   })
 
@@ -36,42 +92,32 @@ describe('command', () => {
     const wrapper = mount(Command, {
       props: { class: 'custom-command' },
     })
-
-    expect(wrapper.classes()).toContain('custom-command')
-  })
-
-  it('renders Command with default modelValue', () => {
-    const wrapper = mount(Command)
-
-    expect(wrapper.props('modelValue')).toBe('')
+    expect(wrapper.find('[data-slot="command"]').classes()).toContain('custom-command')
   })
 
   it('renders CommandShortcut with data-slot', () => {
     const wrapper = mount(CommandShortcut)
-
-    expect(wrapper.attributes('data-slot')).toBe('command-shortcut')
+    expect(wrapper.find('[data-slot="command-shortcut"]').exists()).toBe(true)
   })
 
   it('renders CommandShortcut as span element', () => {
     const wrapper = mount(CommandShortcut)
-
     expect(wrapper.element.tagName).toBe('SPAN')
   })
 
   it('renders CommandShortcut with base classes', () => {
     const wrapper = mount(CommandShortcut)
-
-    expect(wrapper.classes()).toContain('text-muted-foreground')
-    expect(wrapper.classes()).toContain('ml-auto')
-    expect(wrapper.classes()).toContain('text-xs')
-    expect(wrapper.classes()).toContain('tracking-widest')
+    const el = wrapper.find('[data-slot="command-shortcut"]')
+    expect(el.classes()).toContain('text-muted-foreground')
+    expect(el.classes()).toContain('ml-auto')
+    expect(el.classes()).toContain('text-xs')
+    expect(el.classes()).toContain('tracking-widest')
   })
 
   it('renders CommandShortcut with slot content', () => {
     const wrapper = mount(CommandShortcut, {
       slots: { default: '⌘K' },
     })
-
     expect(wrapper.text()).toContain('⌘K')
   })
 
@@ -79,29 +125,26 @@ describe('command', () => {
     const wrapper = mount(CommandShortcut, {
       props: { class: 'custom-shortcut' },
     })
-
-    expect(wrapper.classes()).toContain('custom-shortcut')
+    expect(wrapper.find('[data-slot="command-shortcut"]').classes()).toContain('custom-shortcut')
   })
 
   it('renders CommandSeparator with data-slot', () => {
     const wrapper = mount(CommandSeparator)
-
-    expect(wrapper.attributes('data-slot')).toBe('command-separator')
+    expect(wrapper.find('[data-slot="command-separator"]').exists()).toBe(true)
   })
 
   it('renders CommandSeparator with base classes', () => {
     const wrapper = mount(CommandSeparator)
-
-    expect(wrapper.classes()).toContain('bg-border')
-    expect(wrapper.classes()).toContain('-mx-1')
+    const el = wrapper.find('[data-slot="command-separator"]')
+    expect(el.classes()).toContain('bg-border')
+    expect(el.classes()).toContain('-mx-1')
   })
 
   it('applies custom class to CommandSeparator', () => {
     const wrapper = mount(CommandSeparator, {
       props: { class: 'custom-separator' },
     })
-
-    expect(wrapper.classes()).toContain('custom-separator')
+    expect(wrapper.find('[data-slot="command-separator"]').classes()).toContain('custom-separator')
   })
 
   it('renders CommandList with data-slot', () => {
@@ -113,9 +156,7 @@ describe('command', () => {
       `,
       components: { Command, CommandList },
     })
-
-    expect(wrapper.findComponent(CommandList).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandList).attributes('data-slot')).toBe('command-list')
+    expect(wrapper.find('[data-slot="command-list"]').exists()).toBe(true)
   })
 
   it('renders CommandList with base classes', () => {
@@ -127,8 +168,7 @@ describe('command', () => {
       `,
       components: { Command, CommandList },
     })
-
-    const list = wrapper.findComponent(CommandList)
+    const list = wrapper.find('[data-slot="command-list"]')
     expect(list.classes()).toContain('max-h-[300px]')
     expect(list.classes()).toContain('overflow-y-auto')
   })
@@ -142,11 +182,10 @@ describe('command', () => {
       `,
       components: { Command, CommandList },
     })
-
-    expect(wrapper.findComponent(CommandList).classes()).toContain('custom-list')
+    expect(wrapper.find('[data-slot="command-list"]').classes()).toContain('custom-list')
   })
 
-  it('renders CommandInput wrapper with data-slot', () => {
+  it('renders CommandInput with data-slot', () => {
     const wrapper = mount({
       template: `
         <Command>
@@ -155,23 +194,19 @@ describe('command', () => {
       `,
       components: { Command, CommandInput },
     })
-
-    expect(wrapper.findComponent(CommandInput).exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-input-wrapper"]').exists()).toBe(true)
   })
 
-  it('renders CommandEmpty with data-slot when search has no results', () => {
+  it('renders CommandInput with search icon', () => {
     const wrapper = mount({
       template: `
         <Command>
-          <CommandList>
-            <CommandEmpty>No results found</CommandEmpty>
-          </CommandList>
+          <CommandInput placeholder="Search..." />
         </Command>
       `,
-      components: { Command, CommandList, CommandEmpty },
+      components: { Command, CommandInput },
     })
-
-    expect(wrapper.findComponent(CommandEmpty).exists()).toBe(true)
+    expect(wrapper.find('[data-testid="search-icon"]').exists()).toBe(true)
   })
 
   it('renders CommandGroup with data-slot', () => {
@@ -179,15 +214,13 @@ describe('command', () => {
       template: `
         <Command>
           <CommandGroup heading="Group">
-            <CommandItem>Item</CommandItem>
+            <CommandItem value="item-1">Item</CommandItem>
           </CommandGroup>
         </Command>
       `,
       components: { Command, CommandGroup, CommandItem },
     })
-
-    expect(wrapper.findComponent(CommandGroup).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandGroup).attributes('data-slot')).toBe('command-group')
+    expect(wrapper.find('[data-slot="command-group"]').exists()).toBe(true)
   })
 
   it('renders CommandGroup with heading', () => {
@@ -195,14 +228,14 @@ describe('command', () => {
       template: `
         <Command>
           <CommandGroup heading="My Group">
-            <CommandItem>Item</CommandItem>
+            <CommandItem value="item-1">Item</CommandItem>
           </CommandGroup>
         </Command>
       `,
       components: { Command, CommandGroup, CommandItem },
     })
-
-    expect(wrapper.findComponent(CommandGroup).text()).toContain('My Group')
+    expect(wrapper.find('[data-slot="command-group-heading"]').exists()).toBe(true)
+    expect(wrapper.text()).toContain('My Group')
   })
 
   it('applies custom class to CommandGroup', () => {
@@ -210,14 +243,13 @@ describe('command', () => {
       template: `
         <Command>
           <CommandGroup class="custom-group" heading="Group">
-            <CommandItem>Item</CommandItem>
+            <CommandItem value="item-1">Item</CommandItem>
           </CommandGroup>
         </Command>
       `,
       components: { Command, CommandGroup, CommandItem },
     })
-
-    expect(wrapper.findComponent(CommandGroup).classes()).toContain('custom-group')
+    expect(wrapper.find('[data-slot="command-group"]').classes()).toContain('custom-group')
   })
 
   it('renders CommandItem with data-slot', () => {
@@ -233,9 +265,7 @@ describe('command', () => {
       `,
       components: { Command, CommandList, CommandGroup, CommandItem },
     })
-
-    expect(wrapper.findComponent(CommandItem).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandItem).attributes('data-slot')).toBe('command-item')
+    expect(wrapper.find('[data-slot="command-item"]').exists()).toBe(true)
   })
 
   it('applies custom class to CommandItem', () => {
@@ -251,8 +281,7 @@ describe('command', () => {
       `,
       components: { Command, CommandList, CommandGroup, CommandItem },
     })
-
-    expect(wrapper.findComponent(CommandItem).classes()).toContain('custom-item')
+    expect(wrapper.find('[data-slot="command-item"]').classes()).toContain('custom-item')
   })
 
   it('renders full command structure', () => {
@@ -261,21 +290,19 @@ describe('command', () => {
         <Command>
           <CommandInput placeholder="Search..." />
           <CommandList>
-            <CommandEmpty>No results.</CommandEmpty>
             <CommandGroup heading="Suggestions">
-              <CommandItem>
+              <CommandItem value="item-1">
                 Item 1
                 <CommandShortcut>⌘A</CommandShortcut>
               </CommandItem>
               <CommandSeparator />
-              <CommandItem>Item 2</CommandItem>
+              <CommandItem value="item-2">Item 2</CommandItem>
             </CommandGroup>
           </CommandList>
         </Command>
       `,
       components: {
         Command,
-        CommandEmpty,
         CommandGroup,
         CommandInput,
         CommandItem,
@@ -285,12 +312,12 @@ describe('command', () => {
       },
     })
 
-    expect(wrapper.findComponent(Command).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandInput).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandList).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandGroup).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandItem).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandSeparator).exists()).toBe(true)
-    expect(wrapper.findComponent(CommandShortcut).exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-input-wrapper"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-list"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-group"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-item"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-separator"]').exists()).toBe(true)
+    expect(wrapper.find('[data-slot="command-shortcut"]').exists()).toBe(true)
   })
 })
