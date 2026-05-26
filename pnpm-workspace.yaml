@@ -26,7 +26,7 @@ catalogs:
     vee-validate: ^4.15.1
     vue-input-otp: ^0.3.2
     vue-sonner: ^2.0.9
-    zod: ^4.3.6
+    zod: ^4.4.3
   shadcn-vue-peer:
     '@formkit/auto-animate': ^0.9.0
     '@internationalized/date': ^3.12.0
