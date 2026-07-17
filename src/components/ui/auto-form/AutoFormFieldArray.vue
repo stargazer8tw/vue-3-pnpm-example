@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T extends z.ZodAny">
 import type { Config, ConfigItem } from './interface'
-import { PlusIcon, TrashIcon } from 'lucide-vue-next'
+import { PlusIcon, TrashIcon } from '@lucide/vue'
 import { FieldArray, FieldContextKey, useField } from 'vee-validate'
 import { computed, provide } from 'vue'
 import * as z from 'zod'

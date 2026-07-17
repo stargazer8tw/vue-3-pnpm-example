@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="TData, TValue">
 import { h, shallowRef, ref, type Ref } from 'vue'
-import { ArrowUpIcon, ChevronDownIcon } from 'lucide-vue-next'
+import { ArrowUpIcon, ChevronDownIcon } from '@lucide/vue'
 import type {
   ColumnDef,
   ColumnFiltersState,

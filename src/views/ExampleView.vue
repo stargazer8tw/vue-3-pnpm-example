@@ -8,7 +8,7 @@ import {
   SettingsIcon,
   UserIcon,
   RocketIcon,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 import {
   Command,
   CommandDialog,

@@ -72,7 +72,7 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
 import { computed, h, ref } from 'vue'
 import { cn } from '@/lib/utils'
-import { CalendarIcon, ChevronsUpDownIcon, CheckIcon } from 'lucide-vue-next'
+import { CalendarIcon, ChevronsUpDownIcon, CheckIcon } from '@lucide/vue'
 
 import * as z from 'zod'
 

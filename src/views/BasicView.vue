@@ -55,7 +55,7 @@ import {
   BoldIcon,
   ItalicIcon,
   UnderlineIcon,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 
 // accordion
 const defaultValue = 'item-1'

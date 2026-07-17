@@ -84,7 +84,7 @@ vi.mock('reka-ui', () => ({
   useForwardProps: () => ({}),
 }))
 
-vi.mock('lucide-vue-next', () => ({
+vi.mock('@lucide/vue', () => ({
   ChevronDown: {
     name: 'ChevronDown',
     template: '<svg data-testid="chevron-down"></svg>',
