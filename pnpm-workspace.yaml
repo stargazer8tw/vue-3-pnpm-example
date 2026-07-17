@@ -27,7 +27,7 @@ catalogs:
     class-variance-authority: ^0.7.1
     clsx: ^2.1.1
     embla-carousel-vue: ^8.6.0
-    reka-ui: ^2.9.6
+    reka-ui: ^2.9.8
     vaul-vue: ^0.4.1
     vee-validate: ^4.15.1
     vue-input-otp: ^0.3.2
