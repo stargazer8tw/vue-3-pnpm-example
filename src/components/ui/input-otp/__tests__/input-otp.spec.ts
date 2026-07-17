@@ -32,7 +32,7 @@ vi.mock('reka-ui', () => ({
   useForwardProps: () => ({}),
 }))
 
-vi.mock('lucide-vue-next', () => ({
+vi.mock('@lucide/vue', () => ({
   MinusIcon: {
     name: 'MinusIcon',
     template: '<svg data-testid="minus-icon"></svg>',

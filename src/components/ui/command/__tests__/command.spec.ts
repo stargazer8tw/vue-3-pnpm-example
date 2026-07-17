@@ -62,7 +62,7 @@ vi.mock('reka-ui', () => ({
   },
 }))
 
-vi.mock('lucide-vue-next', () => ({
+vi.mock('@lucide/vue', () => ({
   Search: {
     name: 'Search',
     template: '<svg data-testid="search-icon"></svg>',

@@ -62,7 +62,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-import { CheckIcon, CircleIcon, DotIcon } from 'lucide-vue-next'
+import { CheckIcon, CircleIcon, DotIcon } from '@lucide/vue'
 
 const components: { title: string; href: string; description: string }[] = [
   {

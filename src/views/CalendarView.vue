@@ -12,7 +12,7 @@ import {
   DateFormatter,
   getLocalTimeZone,
 } from '@internationalized/date'
-import { CalendarIcon } from 'lucide-vue-next'
+import { CalendarIcon } from '@lucide/vue'
 import { type Ref, ref } from 'vue'
 
 // calendar v-model bug
